@@ -1,5 +1,6 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import bannerImg from './assets/finalbanner.jpg'
+import galleryImg1 from './assets/banner-01.jpg'
 import bannerImgMobile from './assets/mobileview-01.jpg'
 import bjpLogo from './assets/bjp logo.png'
 import modiLogo from './assets/Modi_Circular_Logos.png'
@@ -95,6 +96,14 @@ const works = [
   },
 ]
 
+const galleryImages = [
+  { src: galleryImg1 },
+  { src: null },
+  { src: bannerImg },
+  { src: null },
+  { src: null },
+]
+
 const navLinks = [
   { id: 'hero', label: 'ಮುಖಪುಟ' },
   { id: 'about', label: 'ನಾಯಕರ ಬಗ್ಗೆ' },
@@ -179,6 +188,59 @@ function App() {
       window.removeEventListener('scroll', onScroll)
       window.removeEventListener('resize', measure)
     }
+  }, [])
+
+  const galleryRowRef = useRef(null)
+  const galleryTrackRef = useRef(null)
+  const galleryItemRefs = useRef([])
+
+  useEffect(() => {
+    const row = galleryRowRef.current
+    const track = galleryTrackRef.current
+    if (!row || !track) return
+
+    let x = 0
+    let raf
+    const speed = 0.55
+
+    const tick = () => {
+      x -= speed
+      const setWidth = track.scrollWidth / 2
+      if (setWidth > 0 && Math.abs(x) >= setWidth) {
+        x += setWidth
+      }
+      track.style.transform = `translateX(${x}px)`
+
+      const rowRect = row.getBoundingClientRect()
+      const centerX = rowRect.left + rowRect.width / 2
+
+      let closestEl = null
+      let closestDist = Infinity
+      galleryItemRefs.current.forEach((el) => {
+        if (!el) return
+        const r = el.getBoundingClientRect()
+        const itemCenter = r.left + r.width / 2
+        const dist = Math.abs(itemCenter - centerX)
+        if (dist < closestDist) {
+          closestDist = dist
+          closestEl = el
+        }
+      })
+
+      galleryItemRefs.current.forEach((el) => {
+        if (!el) return
+        if (el === closestEl && closestDist < 160) {
+          el.classList.add('is-focused')
+        } else {
+          el.classList.remove('is-focused')
+        }
+      })
+
+      raf = requestAnimationFrame(tick)
+    }
+
+    raf = requestAnimationFrame(tick)
+    return () => cancelAnimationFrame(raf)
   }, [])
 
   return (
@@ -406,6 +468,47 @@ function App() {
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="gallery" className="gallery-section">
+        <div className="gallery-heading">
+          <p className="gallery-kicker">ಗ್ಯಾಲರಿ</p>
+          <h2>ಫೋಟೋ ಗ್ಯಾಲರಿ</h2>
+          <p className="gallery-subtitle">
+            ಕ್ಷೇತ್ರದ ಕಾರ್ಯಕ್ರಮಗಳು ಮತ್ತು ಭೇಟಿಗಳ ಕೆಲವು ಕ್ಷಣಗಳು.
+          </p>
+        </div>
+
+        <div className="gallery-row" ref={galleryRowRef}>
+          <div className="gallery-track" ref={galleryTrackRef}>
+            {[...galleryImages, ...galleryImages].map((g, i) => (
+              <div
+                className="gallery-item"
+                key={i}
+                ref={(el) => (galleryItemRefs.current[i] = el)}
+              >
+                {g.src ? (
+                  <img src={g.src} alt="ಗುರ್ಮೆ ಸುರೇಶ್ ಶೆಟ್ಟಿ" />
+                ) : (
+                  <div className="gallery-placeholder">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.3"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <rect x="3" y="5" width="18" height="14" rx="2" />
+                      <circle cx="9" cy="10.5" r="1.6" />
+                      <path d="m3 17 5.5-5.5a2 2 0 0 1 2.8 0L17 17M14.5 14.5l1.3-1.3a2 2 0 0 1 2.8 0L21 15.5" />
+                    </svg>
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </section>
