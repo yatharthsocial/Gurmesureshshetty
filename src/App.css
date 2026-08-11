@@ -1010,6 +1010,10 @@
   @media (max-width: 900px) {
     padding: 48px 6% 24px;
   }
+
+  @media (max-width: 700px) {
+    padding-bottom: 88px;
+  }
 }
 
 .footer-main {

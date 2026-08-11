@@ -134,13 +134,23 @@ const navLinks = [
 
 const reportYears = ['2023', '2024', '2025', '2026']
 
-// TODO: replace with the real list of panchayats under Kaup constituency
-const dummyPanchayats = [
-  'ಪಂಚಾಯತ್ 1',
-  'ಪಂಚಾಯತ್ 2',
-  'ಪಂಚಾಯತ್ 3',
-  'ಪಂಚಾಯತ್ 4',
-  'ಪಂಚಾಯತ್ 5',
+const panchayats = [
+  'ಕೋಟೆ',
+  'ಕುರ್ಕಾಲು',
+  'ಬೆಳ್ಳೆ',
+  'ಶಿರ್ವ',
+  'ಮಜೂರು',
+  'ಇನ್ನಂಜೆ',
+  'ಬೆಳಪು',
+  'ಕುತ್ಯಾರು',
+  'ಮೂಡರಂಗಡಿ',
+  'ಎಲ್ಲೂರು',
+  'ತೆಂಕ',
+  'ಪಡುಬಿದ್ರಿ',
+  'ಹೆಜಮಾಡಿ',
+  'ಪಲಿಮಾರು',
+  'ಕಟಪಾಡಿ',
+  'ಬಡ',
 ]
 
 const issueTypes = [
@@ -173,7 +183,7 @@ const chatSteps = [
     key: 'panchayat',
     type: 'select',
     bot: 'ನಿಮ್ಮ ಪಂಚಾಯತ್ ಆಯ್ಕೆಮಾಡಿ.',
-    options: dummyPanchayats,
+    options: panchayats,
   },
   {
     key: 'issue',
@@ -901,33 +911,40 @@ function App() {
               )}
             </div>
 
-            {currentStep && currentStep.type !== 'details' && (
-              <form className="chat-step-form" onSubmit={handleChatFieldSubmit}>
-                {currentStep.type === 'select' ? (
-                  <select
-                    value={fieldValue}
-                    onChange={(e) => setFieldValue(e.target.value)}
-                  >
-                    <option value="" disabled>
-                      -- ಆಯ್ಕೆಮಾಡಿ --
+            {currentStep && currentStep.type === 'select' && (
+              <form className="chat-step-form" onSubmit={(e) => e.preventDefault()}>
+                <select
+                  value={fieldValue}
+                  onChange={(e) => {
+                    const val = e.target.value
+                    if (!val) return
+                    setFieldValue(val)
+                    advanceChatStep(currentStep.key, val, val)
+                  }}
+                >
+                  <option value="" disabled>
+                    -- ಆಯ್ಕೆಮಾಡಿ --
+                  </option>
+                  {currentStep.options.map((opt) => (
+                    <option key={opt} value={opt}>
+                      {opt}
                     </option>
-                    {currentStep.options.map((opt) => (
-                      <option key={opt} value={opt}>
-                        {opt}
-                      </option>
-                    ))}
-                  </select>
-                ) : (
-                  <input
-                    type={currentStep.type}
-                    value={fieldValue}
-                    onChange={(e) => setFieldValue(e.target.value)}
-                    placeholder={currentStep.placeholder}
-                    autoComplete={currentStep.autoComplete}
-                    inputMode={currentStep.type === 'tel' ? 'numeric' : undefined}
-                    maxLength={currentStep.type === 'tel' ? 10 : undefined}
-                  />
-                )}
+                  ))}
+                </select>
+              </form>
+            )}
+
+            {currentStep && (currentStep.type === 'text' || currentStep.type === 'tel') && (
+              <form className="chat-step-form" onSubmit={handleChatFieldSubmit}>
+                <input
+                  type={currentStep.type}
+                  value={fieldValue}
+                  onChange={(e) => setFieldValue(e.target.value)}
+                  placeholder={currentStep.placeholder}
+                  autoComplete={currentStep.autoComplete}
+                  inputMode={currentStep.type === 'tel' ? 'numeric' : undefined}
+                  maxLength={currentStep.type === 'tel' ? 10 : undefined}
+                />
                 <button type="submit" disabled={!fieldValue.trim()}>
                   ಮುಂದೆ
                 </button>
