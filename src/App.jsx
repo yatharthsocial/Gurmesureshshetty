@@ -104,19 +104,116 @@ const galleryImages = [
   { src: null },
 ]
 
+const slogans = [
+  {
+    sans: 'ಯತೋ ಧರ್ಮಸ್ತತೋ ಜಯಃ',
+    kn: 'ರಾಷ್ಟ್ರ ಸೇವೆಯೇ ಧರ್ಮ ಸೇವೆ',
+    cite: 'ಮಹಾಭಾರತ',
+  },
+  {
+    sans: 'ಕರ್ಮಣ್ಯೇವಾಧಿಕಾರಸ್ತೇ ಮಾ ಫಲೇಷು ಕದಾಚನ',
+    kn: 'ಕರ್ತವ್ಯವೇ ಪ್ರಥಮ, ಫಲಾಪೇಕ್ಷೆ ಅಲ್ಲ',
+    cite: 'ಭಗವದ್ಗೀತಾ 2.47',
+  },
+  {
+    sans: 'ಶ್ರೇಯಾನ್ ಸ್ವಧರ್ಮೋ ವಿಗುಣಃ ಪರಧರ್ಮಾತ್ ಸ್ವನುಷ್ಠಿತಾತ್',
+    kn: 'ಸ್ವಧರ್ಮದ ಪಾಲನೆಯೇ ನಿಜ ಸೇವೆ',
+    cite: 'ಭಗವದ್ಗೀತಾ 3.35',
+  },
+]
+
 const navLinks = [
   { id: 'hero', label: 'ಮುಖಪುಟ' },
   { id: 'about', label: 'ನಾಯಕರ ಬಗ್ಗೆ' },
   { id: 'works', label: 'ಸಾಧನೆಗಳು' },
   { id: 'gallery', label: 'ಗ್ಯಾಲರಿ' },
+  { id: 'report-card', label: 'ವರದಿ ಪತ್ರ' },
   { id: 'news', label: 'ಸುದ್ದಿ' },
   { id: 'contact', label: 'ಸಂಪರ್ಕ' },
 ]
+
+const reportYears = ['2023', '2024', '2025', '2026']
+
+// TODO: replace with the real list of panchayats under Kaup constituency
+const dummyPanchayats = [
+  'ಪಂಚಾಯತ್ 1',
+  'ಪಂಚಾಯತ್ 2',
+  'ಪಂಚಾಯತ್ 3',
+  'ಪಂಚಾಯತ್ 4',
+  'ಪಂಚಾಯತ್ 5',
+]
+
+const issueTypes = [
+  'ರಸ್ತೆ ಸಮಸ್ಯೆ',
+  'ಕುಡಿಯುವ ನೀರು',
+  'ವಿದ್ಯುತ್',
+  'ಚರಂಡಿ / ಒಳಚರಂಡಿ',
+  'ಆರೋಗ್ಯ',
+  'ಶಿಕ್ಷಣ',
+  'ಸ್ವಚ್ಛತೆ',
+  'ಇತರೆ',
+]
+
+const chatSteps = [
+  {
+    key: 'name',
+    type: 'text',
+    bot: 'ನಮಸ್ಕಾರ! ನಾನು ಗುರ್ಮೆ ಸುರೇಶ್ ಶೆಟ್ಟಿ ಅವರ ಸಹಾಯಕ ಬಾಟ್. ನಿಮ್ಮ ಸಮಸ್ಯೆ ದಾಖಲಿಸಲು ಸ್ವಲ್ಪ ಮಾಹಿತಿ ಬೇಕಾಗುತ್ತದೆ. ಮೊದಲಿಗೆ, ನಿಮ್ಮ ಹೆಸರು ತಿಳಿಸಿ.',
+    placeholder: 'ನಿಮ್ಮ ಪೂರ್ಣ ಹೆಸರು',
+    autoComplete: 'name',
+  },
+  {
+    key: 'phone',
+    type: 'tel',
+    bot: 'ಧನ್ಯವಾದಗಳು! ಈಗ ನಿಮ್ಮ ಫೋನ್ ಸಂಖ್ಯೆ ತಿಳಿಸಿ.',
+    placeholder: '10 ಅಂಕಿಯ ಫೋನ್ ಸಂಖ್ಯೆ',
+    autoComplete: 'tel',
+  },
+  {
+    key: 'panchayat',
+    type: 'select',
+    bot: 'ನಿಮ್ಮ ಪಂಚಾಯತ್ ಆಯ್ಕೆಮಾಡಿ.',
+    options: dummyPanchayats,
+  },
+  {
+    key: 'issue',
+    type: 'select',
+    bot: 'ನಿಮ್ಮ ಸಮಸ್ಯೆಯ ವಿಧ ಆಯ್ಕೆಮಾಡಿ.',
+    options: issueTypes,
+  },
+  {
+    key: 'details',
+    type: 'details',
+    bot: 'ದಯವಿಟ್ಟು ನಿಮ್ಮ ಸಮಸ್ಯೆಯ ವಿವರ ಬರೆಯಿರಿ. ಅಗತ್ಯವಿದ್ದರೆ ಫೋಟೋ ಕೂಡ ಸೇರಿಸಬಹುದು.',
+  },
+]
+
+const chatDoneReply =
+  'ಧನ್ಯವಾದಗಳು! ನಿಮ್ಮ ಸಮಸ್ಯೆ ದಾಖಲಾಗಿದೆ. ನಾವು ಶೀಘ್ರದಲ್ಲೇ ನಿಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸುತ್ತೇವೆ.'
 
 function App() {
   const [index, setIndex] = useState(0)
   const [aboutIndex, setAboutIndex] = useState(0)
   const [menuOpen, setMenuOpen] = useState(false)
+  const [sloganIndex, setSloganIndex] = useState(0)
+  const [chatOpen, setChatOpen] = useState(false)
+  const [chatMessages, setChatMessages] = useState([
+    { from: 'bot', text: chatSteps[0].bot },
+  ])
+  const [stepIndex, setStepIndex] = useState(0)
+  const [fieldValue, setFieldValue] = useState('')
+  const [detailsText, setDetailsText] = useState('')
+  const [detailsImage, setDetailsImage] = useState(null)
+  const [chatForm, setChatForm] = useState({
+    name: '',
+    phone: '',
+    panchayat: '',
+    issue: '',
+    details: '',
+    image: null,
+  })
+  const chatBodyRef = useRef(null)
+  const currentStep = chatSteps[stepIndex]
 
   const goToSection = (id) => {
     setMenuOpen(false)
@@ -124,11 +221,77 @@ function App() {
   }
 
   useEffect(() => {
-    document.body.style.overflow = menuOpen ? 'hidden' : ''
+    const id = setInterval(() => {
+      setSloganIndex((i) => (i + 1) % slogans.length)
+    }, 5000)
+    return () => clearInterval(id)
+  }, [])
+
+  useEffect(() => {
+    if (chatBodyRef.current) {
+      chatBodyRef.current.scrollTop = chatBodyRef.current.scrollHeight
+    }
+  }, [chatMessages, chatOpen])
+
+  const sendBotReply = (text) => {
+    setTimeout(() => {
+      setChatMessages((m) => [...m, { from: 'bot', text }])
+    }, 500)
+  }
+
+  const advanceChatStep = (key, value, displayText) => {
+    setChatForm((f) => ({ ...f, [key]: value }))
+    setChatMessages((m) => [...m, { from: 'user', text: displayText }])
+    const next = stepIndex + 1
+    setStepIndex(next)
+    setFieldValue('')
+    sendBotReply(next < chatSteps.length ? chatSteps[next].bot : chatDoneReply)
+  }
+
+  const handleChatFieldSubmit = (e) => {
+    e.preventDefault()
+    const val = fieldValue.trim()
+    if (!val) return
+    advanceChatStep(currentStep.key, val, val)
+  }
+
+  const handleChatDetailsSubmit = (e) => {
+    e.preventDefault()
+    const text = detailsText.trim()
+    if (!text) return
+    setChatForm((f) => ({ ...f, details: text, image: detailsImage }))
+    setChatMessages((m) => [
+      ...m,
+      { from: 'user', text: detailsImage ? `${text} 📎 ${detailsImage.name}` : text },
+    ])
+    setDetailsText('')
+    setDetailsImage(null)
+    setStepIndex(chatSteps.length)
+    sendBotReply(chatDoneReply)
+  }
+
+  const resetChat = () => {
+    setChatForm({
+      name: '',
+      phone: '',
+      panchayat: '',
+      issue: '',
+      details: '',
+      image: null,
+    })
+    setStepIndex(0)
+    setFieldValue('')
+    setDetailsText('')
+    setDetailsImage(null)
+    setChatMessages([{ from: 'bot', text: chatSteps[0].bot }])
+  }
+
+  useEffect(() => {
+    document.body.style.overflow = menuOpen || chatOpen ? 'hidden' : ''
     return () => {
       document.body.style.overflow = ''
     }
-  }, [menuOpen])
+  }, [menuOpen, chatOpen])
 
   useEffect(() => {
     const id = setInterval(() => {
@@ -368,6 +531,21 @@ function App() {
                   </svg>
                 </a>
               </div>
+
+              <div className="nav-overlay-slogan">
+                {slogans.map((s, i) => (
+                  <div
+                    key={s.cite}
+                    className={`nav-overlay-slogan-slide${
+                      i === sloganIndex ? ' active' : ''
+                    }`}
+                  >
+                    <p className="nav-overlay-slogan-sans">{s.sans}</p>
+                    <p className="nav-overlay-slogan-kn">{s.kn}</p>
+                    <p className="nav-overlay-slogan-cite">&mdash; {s.cite}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </nav>
         </div>
@@ -512,6 +690,327 @@ function App() {
           </div>
         </div>
       </section>
+
+      <section id="report-card" className="report-section">
+        <p className="report-kicker">ವರದಿ ಪತ್ರ</p>
+        <h2 className="report-heading">ರಿಪೋರ್ಟ್ ಕಾರ್ಡ್</h2>
+        <p className="report-subtitle">
+          ವರ್ಷವಾರು ಅಭಿವೃದ್ಧಿ ವರದಿಗಳನ್ನು ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ.
+        </p>
+
+        <div className="report-buttons">
+          {reportYears.map((year) => (
+            <a href="#" className="report-btn" key={year}>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M12 4v11m0 0 4-4m-4 4-4-4M5 19h14" />
+              </svg>
+              {year} ವರದಿ
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <footer className="site-footer">
+        <div className="footer-main">
+          <div className="footer-brand">
+            <div className="footer-brand-row">
+              <img src={bjpLogo} alt="ಬಿಜೆಪಿ" className="footer-logo" />
+              <div>
+                <p className="footer-name">ಗುರ್ಮೆ ಸುರೇಶ್ ಶೆಟ್ಟಿ</p>
+                <p className="footer-role">ಕಾಪು ಶಾಸಕ</p>
+              </div>
+            </div>
+            <p className="footer-tagline">
+              ಕಾಪು ಮತ್ತು ಉಡುಪಿಯ ಸೇವೆಗೆ ಸಮರ್ಪಿತ.
+            </p>
+            <div className="footer-social">
+              <a
+                href="https://www.instagram.com/gurmesureshshetty/?hl=en"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+              >
+                <svg viewBox="0 0 24 24" fill="none">
+                  <rect
+                    x="3"
+                    y="3"
+                    width="18"
+                    height="18"
+                    rx="6"
+                    stroke="currentColor"
+                    strokeWidth="1.6"
+                  />
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="4.2"
+                    stroke="currentColor"
+                    strokeWidth="1.6"
+                  />
+                  <circle cx="17" cy="7" r="1.1" fill="currentColor" />
+                </svg>
+              </a>
+              <a
+                href="https://www.facebook.com/sureshshettygurme/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+              >
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M13.5 21v-7.2h2.4l.36-2.8h-2.76V9.1c0-.8.22-1.35 1.37-1.35h1.47V5.24C15.9 5.16 15.1 5.1 14.2 5.1c-1.94 0-3.27 1.18-3.27 3.36v1.86H8.5v2.8h2.43V21h2.57Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://x.com/GurmeShetty?lang=en"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="X"
+              >
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M5 5l14 14M19 5 5 19"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div className="footer-col">
+            <h4>ತ್ವರಿತ ಲಿಂಕ್‌ಗಳು</h4>
+            <nav className="footer-links">
+              {navLinks
+                .filter((link) => link.id !== 'hero')
+                .map((link) => (
+                  <a
+                    key={link.id}
+                    href={`#${link.id}`}
+                    onClick={(e) => {
+                      e.preventDefault()
+                      goToSection(link.id)
+                    }}
+                  >
+                    {link.label}
+                  </a>
+                ))}
+            </nav>
+          </div>
+
+          <div className="footer-col">
+            <h4>ಸಂಪರ್ಕಿಸಿ</h4>
+            <ul className="footer-contact">
+              <li>
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.6"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z" />
+                </svg>
+                <span>+91 XXXXX XXXXX</span>
+              </li>
+              <li>
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.6"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <rect x="3" y="5" width="18" height="14" rx="2" />
+                  <path d="m4 7 8 6 8-6" />
+                </svg>
+                <span>info@gurmesureshshetty.in</span>
+              </li>
+              <li>
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.6"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M12 21s7-6.5 7-11.5A7 7 0 0 0 5 9.5C5 14.5 12 21 12 21Z" />
+                  <circle cx="12" cy="9.5" r="2.3" />
+                </svg>
+                <span>ಕಾಪು, ಉಡುಪಿ ಜಿಲ್ಲೆ, ಕರ್ನಾಟಕ</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="footer-bottom">
+          <p>
+            &copy; {new Date().getFullYear()} ಗುರ್ಮೆ ಸುರೇಶ್ ಶೆಟ್ಟಿ. ಎಲ್ಲಾ
+            ಹಕ್ಕುಗಳನ್ನು ಕಾಯ್ದಿರಿಸಲಾಗಿದೆ.
+          </p>
+          <p className="footer-credit">Managed by Yatharth</p>
+        </div>
+      </footer>
+
+      <div className={`chat-widget${chatOpen ? ' open' : ''}`}>
+        {chatOpen && (
+          <div className="chat-panel">
+            <div className="chat-panel-header">
+              <span>ಸಹಾಯಕ ಬಾಟ್</span>
+              <button
+                type="button"
+                className="chat-panel-close"
+                onClick={() => setChatOpen(false)}
+                aria-label="ಚಾಟ್ ಮುಚ್ಚಿ"
+              >
+                &times;
+              </button>
+            </div>
+
+            <div className="chat-panel-body" ref={chatBodyRef}>
+              {chatMessages.map((msg, i) => (
+                <div
+                  key={i}
+                  className={`chat-bubble ${msg.from === 'bot' ? 'chat-bubble-bot' : 'chat-bubble-user'}`}
+                >
+                  {msg.text}
+                </div>
+              ))}
+
+              {!currentStep && (
+                <button
+                  type="button"
+                  className="chat-reset-btn"
+                  onClick={resetChat}
+                >
+                  ಹೊಸ ಸಮಸ್ಯೆ ದಾಖಲಿಸಿ
+                </button>
+              )}
+            </div>
+
+            {currentStep && currentStep.type !== 'details' && (
+              <form className="chat-step-form" onSubmit={handleChatFieldSubmit}>
+                {currentStep.type === 'select' ? (
+                  <select
+                    value={fieldValue}
+                    onChange={(e) => setFieldValue(e.target.value)}
+                  >
+                    <option value="" disabled>
+                      -- ಆಯ್ಕೆಮಾಡಿ --
+                    </option>
+                    {currentStep.options.map((opt) => (
+                      <option key={opt} value={opt}>
+                        {opt}
+                      </option>
+                    ))}
+                  </select>
+                ) : (
+                  <input
+                    type={currentStep.type}
+                    value={fieldValue}
+                    onChange={(e) => setFieldValue(e.target.value)}
+                    placeholder={currentStep.placeholder}
+                    autoComplete={currentStep.autoComplete}
+                    inputMode={currentStep.type === 'tel' ? 'numeric' : undefined}
+                    maxLength={currentStep.type === 'tel' ? 10 : undefined}
+                  />
+                )}
+                <button type="submit" disabled={!fieldValue.trim()}>
+                  ಮುಂದೆ
+                </button>
+              </form>
+            )}
+
+            {currentStep && currentStep.type === 'details' && (
+              <form
+                className="chat-details-form"
+                onSubmit={handleChatDetailsSubmit}
+              >
+                <textarea
+                  value={detailsText}
+                  onChange={(e) => setDetailsText(e.target.value)}
+                  placeholder="ಸಮಸ್ಯೆಯ ವಿವರ ಬರೆಯಿರಿ..."
+                  rows={3}
+                />
+                <div className="chat-details-actions">
+                  <label className="chat-file-btn">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.8"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M21 11.5 12.5 20a4.5 4.5 0 0 1-6.36-6.36L14.5 5.28a3 3 0 0 1 4.24 4.24L10.4 18a1.5 1.5 0 0 1-2.12-2.12l7.78-7.78" />
+                    </svg>
+                    <span>
+                      {detailsImage ? detailsImage.name : 'ಫೋಟೋ ಸೇರಿಸಿ'}
+                    </span>
+                    <input
+                      type="file"
+                      accept="image/*"
+                      onChange={(e) =>
+                        setDetailsImage(e.target.files?.[0] || null)
+                      }
+                      hidden
+                    />
+                  </label>
+                  <button type="submit" disabled={!detailsText.trim()}>
+                    ಸಲ್ಲಿಸಿ
+                  </button>
+                </div>
+              </form>
+            )}
+          </div>
+        )}
+
+        <div className="chat-fab-row">
+          {!chatOpen && (
+            <span className="chat-fab-label" onClick={() => setChatOpen(true)}>
+              MLA ಜೊತೆ ಮಾತನಾಡಿ
+            </span>
+          )}
+
+          <button
+            type="button"
+            className="chat-fab"
+            onClick={() => setChatOpen((o) => !o)}
+            aria-label="ಚಾಟ್ ಬಾಟ್ ತೆರೆಯಿರಿ"
+          >
+            {!chatOpen && <span className="chat-fab-ping" aria-hidden="true" />}
+            {chatOpen ? (
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+                <path d="M6 6l12 12M18 6 6 18" />
+              </svg>
+            ) : (
+              <svg viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M4 11.2c0-4.53 3.8-8.2 8.5-8.2s8.5 3.67 8.5 8.2c0 4.53-3.8 8.2-8.5 8.2-.98 0-1.92-.16-2.8-.45L5.8 20.9a.6.6 0 0 1-.85-.68l.9-3.32C4.75 15.56 4 13.47 4 11.2Z"
+                  fill="currentColor"
+                />
+                <circle cx="8.6" cy="11.2" r="1.15" fill="#e8720c" />
+                <circle cx="12.5" cy="11.2" r="1.15" fill="#e8720c" />
+                <circle cx="16.4" cy="11.2" r="1.15" fill="#e8720c" />
+              </svg>
+            )}
+            {!chatOpen && <span className="chat-fab-dot" aria-hidden="true" />}
+          </button>
+        </div>
+      </div>
     </>
   )
 }
