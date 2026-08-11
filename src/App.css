@@ -1535,28 +1535,24 @@
   }
 }
 
-.chat-file-btn {
+.chat-camera-btn {
+  flex-shrink: 0;
   display: flex;
   align-items: center;
-  gap: 6px;
-  min-width: 0;
-  padding: 8px 12px;
-  border: 1px dashed rgba(0, 0, 0, 0.2);
-  border-radius: 999px;
-  font-size: 12px;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 50%;
   color: #555;
   cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease;
 
   svg {
-    flex-shrink: 0;
-    width: 15px;
-    height: 15px;
-  }
-
-  span {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    width: 18px;
+    height: 18px;
   }
 
   &:hover {

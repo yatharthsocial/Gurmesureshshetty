@@ -213,7 +213,6 @@ function App() {
   const [stepIndex, setStepIndex] = useState(0)
   const [fieldValue, setFieldValue] = useState('')
   const [detailsText, setDetailsText] = useState('')
-  const [detailsImage, setDetailsImage] = useState(null)
   const [chatForm, setChatForm] = useState({
     name: '',
     phone: '',
@@ -265,19 +264,29 @@ function App() {
     advanceChatStep(currentStep.key, val, val)
   }
 
+  const submitDetails = (text, image) => {
+    setChatForm((f) => ({ ...f, details: text, image }))
+    setChatMessages((m) => [
+      ...m,
+      { from: 'user', text: image ? `${text} 📎 ${image.name}` : text },
+    ])
+    setDetailsText('')
+    setStepIndex(chatSteps.length)
+    sendBotReply(chatDoneReply)
+  }
+
   const handleChatDetailsSubmit = (e) => {
     e.preventDefault()
     const text = detailsText.trim()
     if (!text) return
-    setChatForm((f) => ({ ...f, details: text, image: detailsImage }))
-    setChatMessages((m) => [
-      ...m,
-      { from: 'user', text: detailsImage ? `${text} 📎 ${detailsImage.name}` : text },
-    ])
-    setDetailsText('')
-    setDetailsImage(null)
-    setStepIndex(chatSteps.length)
-    sendBotReply(chatDoneReply)
+    submitDetails(text, null)
+  }
+
+  const handleCameraCapture = (e) => {
+    const file = e.target.files?.[0]
+    if (!file) return
+    submitDetails(detailsText.trim() || 'ಫೋಟೋ ಕಳುಹಿಸಲಾಗಿದೆ.', file)
+    e.target.value = ''
   }
 
   const resetChat = () => {
@@ -292,7 +301,6 @@ function App() {
     setStepIndex(0)
     setFieldValue('')
     setDetailsText('')
-    setDetailsImage(null)
     setChatMessages([{ from: 'bot', text: chatSteps[0].bot }])
   }
 
@@ -963,26 +971,16 @@ function App() {
                   rows={3}
                 />
                 <div className="chat-details-actions">
-                  <label className="chat-file-btn">
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1.8"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <path d="M21 11.5 12.5 20a4.5 4.5 0 0 1-6.36-6.36L14.5 5.28a3 3 0 0 1 4.24 4.24L10.4 18a1.5 1.5 0 0 1-2.12-2.12l7.78-7.78" />
+                  <label className="chat-camera-btn" aria-label="ಫೋಟೋ ತೆಗೆಯಿರಿ">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M4 8.5a2 2 0 0 1 2-2h1.2l.8-1.5a1.5 1.5 0 0 1 1.32-.8h5.36a1.5 1.5 0 0 1 1.32.8l.8 1.5H18a2 2 0 0 1 2 2V17a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z" />
+                      <circle cx="12" cy="12.5" r="3.4" />
                     </svg>
-                    <span>
-                      {detailsImage ? detailsImage.name : 'ಫೋಟೋ ಸೇರಿಸಿ'}
-                    </span>
                     <input
                       type="file"
                       accept="image/*"
-                      onChange={(e) =>
-                        setDetailsImage(e.target.files?.[0] || null)
-                      }
+                      capture="environment"
+                      onChange={handleCameraCapture}
                       hidden
                     />
                   </label>
