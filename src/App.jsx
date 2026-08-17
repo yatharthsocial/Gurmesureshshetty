@@ -201,6 +201,13 @@ const chatSteps = [
 const chatDoneReply =
   'ಧನ್ಯವಾದಗಳು! ನಿಮ್ಮ ಸಮಸ್ಯೆ ದಾಖಲಾಗಿದೆ. ನಾವು ಶೀಘ್ರದಲ್ಲೇ ನಿಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸುತ್ತೇವೆ.'
 
+const chatErrorReply =
+  'ಕ್ಷಮಿಸಿ, ಸಲ್ಲಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.'
+
+const API_URL =
+  import.meta.env.VITE_API_BASE_URL ||
+  'https://gurmesureshshetty-backend-production.up.railway.app'
+
 function App() {
   const [index, setIndex] = useState(0)
   const [aboutIndex, setAboutIndex] = useState(0)
@@ -213,6 +220,7 @@ function App() {
   const [stepIndex, setStepIndex] = useState(0)
   const [fieldValue, setFieldValue] = useState('')
   const [detailsText, setDetailsText] = useState('')
+  const [chatSubmitting, setChatSubmitting] = useState(false)
   const [chatForm, setChatForm] = useState({
     name: '',
     phone: '',
@@ -264,15 +272,38 @@ function App() {
     advanceChatStep(currentStep.key, val, val)
   }
 
-  const submitDetails = (text, image) => {
+  const submitDetails = async (text, image) => {
     setChatForm((f) => ({ ...f, details: text, image }))
     setChatMessages((m) => [
       ...m,
       { from: 'user', text: image ? `${text} 📎 ${image.name}` : text },
     ])
-    setDetailsText('')
-    setStepIndex(chatSteps.length)
-    sendBotReply(chatDoneReply)
+
+    setChatSubmitting(true)
+    try {
+      const formData = new FormData()
+      formData.append('name', chatForm.name)
+      formData.append('phone', chatForm.phone)
+      formData.append('panchayat', chatForm.panchayat)
+      formData.append('issueType', chatForm.issue)
+      formData.append('details', text)
+      if (image) formData.append('image', image)
+
+      const res = await fetch(`${API_URL}/api/grievances`, {
+        method: 'POST',
+        body: formData,
+      })
+
+      if (!res.ok) throw new Error('submit failed')
+
+      setDetailsText('')
+      setStepIndex(chatSteps.length)
+      sendBotReply(chatDoneReply)
+    } catch {
+      sendBotReply(chatErrorReply)
+    } finally {
+      setChatSubmitting(false)
+    }
   }
 
   const handleChatDetailsSubmit = (e) => {
@@ -301,6 +332,7 @@ function App() {
     setStepIndex(0)
     setFieldValue('')
     setDetailsText('')
+    setChatSubmitting(false)
     setChatMessages([{ from: 'bot', text: chatSteps[0].bot }])
   }
 
@@ -969,9 +1001,13 @@ function App() {
                   onChange={(e) => setDetailsText(e.target.value)}
                   placeholder="ಸಮಸ್ಯೆಯ ವಿವರ ಬರೆಯಿರಿ..."
                   rows={3}
+                  disabled={chatSubmitting}
                 />
                 <div className="chat-details-actions">
-                  <label className="chat-camera-btn" aria-label="ಫೋಟೋ ತೆಗೆಯಿರಿ">
+                  <label
+                    className={`chat-camera-btn${chatSubmitting ? ' disabled' : ''}`}
+                    aria-label="ಫೋಟೋ ತೆಗೆಯಿರಿ"
+                  >
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M4 8.5a2 2 0 0 1 2-2h1.2l.8-1.5a1.5 1.5 0 0 1 1.32-.8h5.36a1.5 1.5 0 0 1 1.32.8l.8 1.5H18a2 2 0 0 1 2 2V17a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z" />
                       <circle cx="12" cy="12.5" r="3.4" />
@@ -981,11 +1017,12 @@ function App() {
                       accept="image/*"
                       capture="environment"
                       onChange={handleCameraCapture}
+                      disabled={chatSubmitting}
                       hidden
                     />
                   </label>
-                  <button type="submit" disabled={!detailsText.trim()}>
-                    ಸಲ್ಲಿಸಿ
+                  <button type="submit" disabled={!detailsText.trim() || chatSubmitting}>
+                    {chatSubmitting ? 'ಕಳುಹಿಸಲಾಗುತ್ತಿದೆ...' : 'ಸಲ್ಲಿಸಿ'}
                   </button>
                 </div>
               </form>

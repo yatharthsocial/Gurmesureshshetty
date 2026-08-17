@@ -1559,4 +1559,9 @@
     border-color: #e8720c;
     color: #e8720c;
   }
+
+  &.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+  }
 }
