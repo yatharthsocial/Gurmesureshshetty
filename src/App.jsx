@@ -10,24 +10,6 @@ import aboutImg2 from './assets/final02.png'
 import aboutImg3 from './assets/Gurme_Suresh_B&W_Outline_3.png'
 import './App.css'
 
-const taglines = [
-  {
-    accent: 'ಪ್ರಗತಿಗೆ',
-    rest: 'ಸಮರ್ಪಿತ.',
-    sub: 'ಕಾಪು ಮತ್ತು ಉಡುಪಿನ ಸೇವೆಗೆ ಸಮರ್ಪಿತ.',
-  },
-  {
-    accent: 'ಪ್ರತಿ ನಾಗರಿಕನಿಗೂ',
-    rest: 'ಬದ್ಧ.',
-    sub: 'ಉಡುಪಿ ಜಿಲ್ಲೆಯ ಅಭಿವೃದ್ಧಿಗೆ ಸೇವೆ.',
-  },
-  {
-    accent: 'ಉಜ್ವಲ ಭವಿಷ್ಯದ',
-    rest: 'ನಿರ್ಮಾಣ.',
-    sub: 'ಕಾಪು ಮತ್ತು ಉಡುಪಿನ ಅಭಿವೃದ್ಧಿಗಾಗಿ.',
-  },
-]
-
 const aboutImages = [aboutImg, aboutImg2, aboutImg3]
 
 const workIcons = {
@@ -51,51 +33,6 @@ const workIcons = {
   ),
 }
 
-const works = [
-  {
-    icon: 'road',
-    category: 'ರಸ್ತೆ ಅಭಿವೃದ್ಧಿ',
-    location: 'ಕಾಪು',
-    title: 'ಪ್ರಮುಖ ರಸ್ತೆಗಳ ಡಾಂಬರೀಕರಣ',
-    desc: 'ಕಾಪಿನ ಪ್ರಮುಖ ಸಂಪರ್ಕ ರಸ್ತೆಗಳ ವಿಸ್ತರಣೆ ಮತ್ತು ಡಾಂಬರೀಕರಣ ಕಾಮಗಾರಿ ಪೂರ್ಣ.',
-  },
-  {
-    icon: 'water',
-    category: 'ಕುಡಿಯುವ ನೀರು',
-    location: 'ಉಡುಪಿ',
-    title: 'ಶುದ್ಧ ಕುಡಿಯುವ ನೀರಿನ ಯೋಜನೆ',
-    desc: 'ಗ್ರಾಮೀಣ ಪ್ರದೇಶಗಳಿಗೆ ನಿರಂತರ, ಶುದ್ಧ ಕುಡಿಯುವ ನೀರಿನ ಸೌಲಭ್ಯ ಒದಗಿಸಲಾಗಿದೆ.',
-  },
-  {
-    icon: 'education',
-    category: 'ಶಿಕ್ಷಣ',
-    location: 'ಕಾಪು',
-    title: 'ಸರ್ಕಾರಿ ಶಾಲಾ ಮೂಲಸೌಕರ್ಯ',
-    desc: 'ಸರ್ಕಾರಿ ಶಾಲೆಗಳಲ್ಲಿ ಹೊಸ ಕೊಠಡಿ, ಪೀಠೋಪಕರಣ ಹಾಗೂ ಡಿಜಿಟಲ್ ಸೌಲಭ್ಯ ಒದಗಿಸಲಾಗಿದೆ.',
-  },
-  {
-    icon: 'health',
-    category: 'ಆರೋಗ್ಯ',
-    location: 'ಉಡುಪಿ',
-    title: 'ಪ್ರಾಥಮಿಕ ಆರೋಗ್ಯ ಕೇಂದ್ರ ಬಲವರ್ಧನೆ',
-    desc: 'ಸ್ಥಳೀಯ ಆರೋಗ್ಯ ಕೇಂದ್ರಗಳಿಗೆ ಅಗತ್ಯ ಉಪಕರಣ ಮತ್ತು ಸಿಬ್ಬಂದಿ ಸೌಲಭ್ಯ ಹೆಚ್ಚಳ.',
-  },
-  {
-    icon: 'infra',
-    category: 'ಮೂಲಸೌಕರ್ಯ',
-    location: 'ಕಾಪು',
-    title: 'ವಿದ್ಯುತ್ ಮತ್ತು ಒಳಚರಂಡಿ ಸುಧಾರಣೆ',
-    desc: 'ವಿದ್ಯುತ್ ಪೂರೈಕೆ ಮತ್ತು ಒಳಚರಂಡಿ ವ್ಯವಸ್ಥೆಯ ಆಧುನೀಕರಣ ಕಾಮಗಾರಿ.',
-  },
-  {
-    icon: 'youth',
-    category: 'ಯುವಜನ ಮತ್ತು ಕ್ರೀಡೆ',
-    location: 'ಉಡುಪಿ',
-    title: 'ಕ್ರೀಡಾ ಮೈದಾನ ಹಾಗೂ ಸಮುದಾಯ ಭವನ',
-    desc: 'ಯುವಜನರಿಗಾಗಿ ಹೊಸ ಕ್ರೀಡಾ ಮೈದಾನ ಮತ್ತು ಸಮುದಾಯ ಭವನ ನಿರ್ಮಾಣ.',
-  },
-]
-
 const galleryImages = [
   { src: galleryImg1 },
   { src: null },
@@ -104,37 +41,10 @@ const galleryImages = [
   { src: null },
 ]
 
-const slogans = [
-  {
-    sans: 'ಯತೋ ಧರ್ಮಸ್ತತೋ ಜಯಃ',
-    kn: 'ರಾಷ್ಟ್ರ ಸೇವೆಯೇ ಧರ್ಮ ಸೇವೆ',
-    cite: 'ಮಹಾಭಾರತ',
-  },
-  {
-    sans: 'ಕರ್ಮಣ್ಯೇವಾಧಿಕಾರಸ್ತೇ ಮಾ ಫಲೇಷು ಕದಾಚನ',
-    kn: 'ಕರ್ತವ್ಯವೇ ಪ್ರಥಮ, ಫಲಾಪೇಕ್ಷೆ ಅಲ್ಲ',
-    cite: 'ಭಗವದ್ಗೀತಾ 2.47',
-  },
-  {
-    sans: 'ಶ್ರೇಯಾನ್ ಸ್ವಧರ್ಮೋ ವಿಗುಣಃ ಪರಧರ್ಮಾತ್ ಸ್ವನುಷ್ಠಿತಾತ್',
-    kn: 'ಸ್ವಧರ್ಮದ ಪಾಲನೆಯೇ ನಿಜ ಸೇವೆ',
-    cite: 'ಭಗವದ್ಗೀತಾ 3.35',
-  },
-]
-
-const navLinks = [
-  { id: 'hero', label: 'ಮುಖಪುಟ' },
-  { id: 'about', label: 'ನಾಯಕರ ಬಗ್ಗೆ' },
-  { id: 'works', label: 'ಸಾಧನೆಗಳು' },
-  { id: 'gallery', label: 'ಗ್ಯಾಲರಿ' },
-  { id: 'report-card', label: 'ವರದಿ ಪತ್ರ' },
-  { id: 'news', label: 'ಸುದ್ದಿ' },
-  { id: 'contact', label: 'ಸಂಪರ್ಕ' },
-]
-
 const reportYears = ['2023', '2024', '2025', '2026']
 
-const panchayats = [
+// Canonical (Kannada) values — always what gets stored/sent, regardless of display language
+const PANCHAYATS_KN = [
   'ಕೋಟೆ',
   'ಕುರ್ಕಾಲು',
   'ಬೆಳ್ಳೆ',
@@ -152,8 +62,26 @@ const panchayats = [
   'ಕಟಪಾಡಿ',
   'ಬಡ',
 ]
+const PANCHAYATS_EN = [
+  'Kote',
+  'Kurkalu',
+  'Belle',
+  'Shirva',
+  'Majur',
+  'Innanje',
+  'Belapu',
+  'Kuthyaru',
+  'Mudarangadi',
+  'Yellur',
+  'Thenka',
+  'Padubidri',
+  'Hejamadi',
+  'Palimaru',
+  'Katapadi',
+  'Bada',
+]
 
-const issueTypes = [
+const ISSUE_TYPES_KN = [
   'ರಸ್ತೆ ಸಮಸ್ಯೆ',
   'ಕುಡಿಯುವ ನೀರು',
   'ವಿದ್ಯುತ್',
@@ -163,63 +91,379 @@ const issueTypes = [
   'ಸ್ವಚ್ಛತೆ',
   'ಇತರೆ',
 ]
-
-const chatSteps = [
-  {
-    key: 'name',
-    type: 'text',
-    bot: 'ನಮಸ್ಕಾರ! ನಾನು ಗುರ್ಮೆ ಸುರೇಶ್ ಶೆಟ್ಟಿ ಅವರ ಸಹಾಯಕ ಬಾಟ್. ನಿಮ್ಮ ಸಮಸ್ಯೆ ದಾಖಲಿಸಲು ಸ್ವಲ್ಪ ಮಾಹಿತಿ ಬೇಕಾಗುತ್ತದೆ. ಮೊದಲಿಗೆ, ನಿಮ್ಮ ಹೆಸರು ತಿಳಿಸಿ.',
-    placeholder: 'ನಿಮ್ಮ ಪೂರ್ಣ ಹೆಸರು',
-    autoComplete: 'name',
-  },
-  {
-    key: 'phone',
-    type: 'tel',
-    bot: 'ಧನ್ಯವಾದಗಳು! ಈಗ ನಿಮ್ಮ ಫೋನ್ ಸಂಖ್ಯೆ ತಿಳಿಸಿ.',
-    placeholder: '10 ಅಂಕಿಯ ಫೋನ್ ಸಂಖ್ಯೆ',
-    autoComplete: 'tel',
-  },
-  {
-    key: 'panchayat',
-    type: 'select',
-    bot: 'ನಿಮ್ಮ ಪಂಚಾಯತ್ ಆಯ್ಕೆಮಾಡಿ.',
-    options: panchayats,
-  },
-  {
-    key: 'issue',
-    type: 'select',
-    bot: 'ನಿಮ್ಮ ಸಮಸ್ಯೆಯ ವಿಧ ಆಯ್ಕೆಮಾಡಿ.',
-    options: issueTypes,
-  },
-  {
-    key: 'details',
-    type: 'details',
-    bot: 'ದಯವಿಟ್ಟು ನಿಮ್ಮ ಸಮಸ್ಯೆಯ ವಿವರ ಬರೆಯಿರಿ. ಅಗತ್ಯವಿದ್ದರೆ ಫೋಟೋ ಕೂಡ ಸೇರಿಸಬಹುದು.',
-  },
+const ISSUE_TYPES_EN = [
+  'Road Issue',
+  'Drinking Water',
+  'Electricity',
+  'Drainage / Sewage',
+  'Health',
+  'Education',
+  'Sanitation',
+  'Other',
 ]
 
-const chatDoneReply =
-  'ಧನ್ಯವಾದಗಳು! ನಿಮ್ಮ ಸಮಸ್ಯೆ ದಾಖಲಾಗಿದೆ. ನಾವು ಶೀಘ್ರದಲ್ಲೇ ನಿಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸುತ್ತೇವೆ.'
-
-const chatErrorReply =
-  'ಕ್ಷಮಿಸಿ, ಸಲ್ಲಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.'
+// chatStepsBase holds the language-independent shape of each step.
+// Bot prompts/placeholders live in content[lang].chat.steps below, same order.
+const chatStepsBase = [
+  { key: 'name', type: 'text', autoComplete: 'name' },
+  { key: 'phone', type: 'tel', autoComplete: 'tel' },
+  { key: 'panchayat', type: 'select', optionsKn: PANCHAYATS_KN, optionsEn: PANCHAYATS_EN },
+  { key: 'issue', type: 'select', optionsKn: ISSUE_TYPES_KN, optionsEn: ISSUE_TYPES_EN },
+  { key: 'details', type: 'details' },
+]
 
 const API_URL =
   import.meta.env.VITE_API_BASE_URL ||
   'https://gurmesureshshetty-backend-production.up.railway.app'
 
+const content = {
+  kn: {
+    meta: {
+      bjpAlt: 'ಬಿಜೆಪಿ',
+      modiAlt: 'ನರೇಂದ್ರ ಮೋದಿ',
+      brandName: 'ಗುರ್ಮೆ ಸುರೇಶ್ ಶೆಟ್ಟಿ',
+      brandRole: 'ಕಾಪು ಶಾಸಕ',
+      menuLabel: 'ಮೆನು',
+      closeLabel: 'ಮುಚ್ಚಿ',
+    },
+    nav: [
+      { id: 'hero', label: 'ಮುಖಪುಟ' },
+      { id: 'about', label: 'ನಾಯಕರ ಬಗ್ಗೆ' },
+      { id: 'works', label: 'ಸಾಧನೆಗಳು' },
+      { id: 'gallery', label: 'ಗ್ಯಾಲರಿ' },
+      { id: 'report-card', label: 'ವರದಿ ಪತ್ರ' },
+      { id: 'news', label: 'ಸುದ್ದಿ' },
+      { id: 'contact', label: 'ಸಂಪರ್ಕ' },
+    ],
+    taglines: [
+      {
+        accent: 'ಪ್ರಗತಿಗೆ',
+        rest: 'ಸಮರ್ಪಿತ.',
+        sub: 'ಕಾಪು ಮತ್ತು ಉಡುಪಿನ ಸೇವೆಗೆ ಸಮರ್ಪಿತ.',
+      },
+      {
+        accent: 'ಪ್ರತಿ ನಾಗರಿಕನಿಗೂ',
+        rest: 'ಬದ್ಧ.',
+        sub: 'ಉಡುಪಿ ಜಿಲ್ಲೆಯ ಅಭಿವೃದ್ಧಿಗೆ ಸೇವೆ.',
+      },
+      {
+        accent: 'ಉಜ್ವಲ ಭವಿಷ್ಯದ',
+        rest: 'ನಿರ್ಮಾಣ.',
+        sub: 'ಕಾಪು ಮತ್ತು ಉಡುಪಿನ ಅಭಿವೃದ್ಧಿಗಾಗಿ.',
+      },
+    ],
+    slogans: [
+      {
+        sans: 'ಯತೋ ಧರ್ಮಸ್ತತೋ ಜಯಃ',
+        meaning: 'ರಾಷ್ಟ್ರ ಸೇವೆಯೇ ಧರ್ಮ ಸೇವೆ',
+        cite: 'ಮಹಾಭಾರತ',
+      },
+      {
+        sans: 'ಕರ್ಮಣ್ಯೇವಾಧಿಕಾರಸ್ತೇ ಮಾ ಫಲೇಷು ಕದಾಚನ',
+        meaning: 'ಕರ್ತವ್ಯವೇ ಪ್ರಥಮ, ಫಲಾಪೇಕ್ಷೆ ಅಲ್ಲ',
+        cite: 'ಭಗವದ್ಗೀತಾ 2.47',
+      },
+      {
+        sans: 'ಶ್ರೇಯಾನ್ ಸ್ವಧರ್ಮೋ ವಿಗುಣಃ ಪರಧರ್ಮಾತ್ ಸ್ವನುಷ್ಠಿತಾತ್',
+        meaning: 'ಸ್ವಧರ್ಮದ ಪಾಲನೆಯೇ ನಿಜ ಸೇವೆ',
+        cite: 'ಭಗವದ್ಗೀತಾ 3.35',
+      },
+    ],
+    about: {
+      kicker: 'ನಾಯಕರ ಬಗ್ಗೆ',
+      role: 'ಬಿಜೆಪಿ · ಕಾಪು, ಉಡುಪಿ',
+      body: [
+        'ಕಾಪು ಮತ್ತು ಉಡುಪಿಯ ಜನರೊಂದಿಗೆ ವರ್ಷಗಳಿಂದ ನಿಕಟವಾಗಿ ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತಾ, ಅವರ ಸಮಸ್ಯೆಗಳು ಮತ್ತು ಕಳಕಳಿಗಳನ್ನು ಆಲಿಸಿ, ಪ್ರತಿಯೊಂದು ಹೆಜ್ಜೆಯಲ್ಲೂ ಅವರೊಂದಿಗೆ ನಿಂತಿರುವ ಸಮರ್ಪಿತ ಜನಪರ ನಾಯಕ.',
+        'ತಾವು ಸೇವೆ ಸಲ್ಲಿಸುವ ಸಮುದಾಯದಲ್ಲಿ ಬೇರೂರಿರುವ ಅವರು, ಪಾರದರ್ಶಕ ಹಾಗೂ ಸುಲಭವಾಗಿ ಜನರನ್ನು ತಲುಪಬಹುದಾದ ನಾಯಕತ್ವದಲ್ಲಿ ನಂಬಿಕೆ ಇಟ್ಟು, ಪ್ರತಿಯೊಬ್ಬ ನಾಗರಿಕನ ದೈನಂದಿನ ಬದುಕಿನಲ್ಲಿ ನೈಜ ಪ್ರಗತಿಯನ್ನು ಸಾಧಿಸಲು ಸದಾ ಶ್ರಮಿಸುತ್ತಿದ್ದಾರೆ.',
+        'ಮೂಲಸೌಕರ್ಯ ಮತ್ತು ನಾಗರಿಕ ಸೌಲಭ್ಯಗಳಿಂದ ಹಿಡಿದು ಯುವಜನರ ಅಭಿವೃದ್ಧಿ ಹಾಗೂ ಸಮುದಾಯದ ಕಲ್ಯಾಣದವರೆಗೆ, ಅವರ ಗಮನ ಪ್ರಾಯೋಗಿಕ ಮತ್ತು ಶಾಶ್ವತ ಬದಲಾವಣೆಯ ಮೇಲಿದೆ—ಈ ಬದಲಾವಣೆ ಕ್ಷೇತ್ರದ ಜನರೊಂದಿಗೆ ಕೈಜೋಡಿಸಿ ನಿರ್ಮಿಸಲ್ಪಟ್ಟಿದೆ.',
+      ],
+    },
+    works: {
+      kicker: 'ಸಾಧನೆಗಳು',
+      heading: 'ಅಭಿವೃದ್ಧಿ ಕಾರ್ಯಗಳು',
+      subtitle: 'ಕಾಪು ಮತ್ತು ಉಡುಪಿಯಲ್ಲಿ ಪೂರ್ಣಗೊಂಡ ಪ್ರಮುಖ ಅಭಿವೃದ್ಧಿ ಕಾರ್ಯಗಳ ಒಂದು ನೋಟ.',
+      readMore: 'ಇನ್ನಷ್ಟು ಓದಿ',
+      items: [
+        {
+          icon: 'road',
+          category: 'ರಸ್ತೆ ಅಭಿವೃದ್ಧಿ',
+          location: 'ಕಾಪು',
+          title: 'ಪ್ರಮುಖ ರಸ್ತೆಗಳ ಡಾಂಬರೀಕರಣ',
+          desc: 'ಕಾಪಿನ ಪ್ರಮುಖ ಸಂಪರ್ಕ ರಸ್ತೆಗಳ ವಿಸ್ತರಣೆ ಮತ್ತು ಡಾಂಬರೀಕರಣ ಕಾಮಗಾರಿ ಪೂರ್ಣ.',
+        },
+        {
+          icon: 'water',
+          category: 'ಕುಡಿಯುವ ನೀರು',
+          location: 'ಉಡುಪಿ',
+          title: 'ಶುದ್ಧ ಕುಡಿಯುವ ನೀರಿನ ಯೋಜನೆ',
+          desc: 'ಗ್ರಾಮೀಣ ಪ್ರದೇಶಗಳಿಗೆ ನಿರಂತರ, ಶುದ್ಧ ಕುಡಿಯುವ ನೀರಿನ ಸೌಲಭ್ಯ ಒದಗಿಸಲಾಗಿದೆ.',
+        },
+        {
+          icon: 'education',
+          category: 'ಶಿಕ್ಷಣ',
+          location: 'ಕಾಪು',
+          title: 'ಸರ್ಕಾರಿ ಶಾಲಾ ಮೂಲಸೌಕರ್ಯ',
+          desc: 'ಸರ್ಕಾರಿ ಶಾಲೆಗಳಲ್ಲಿ ಹೊಸ ಕೊಠಡಿ, ಪೀಠೋಪಕರಣ ಹಾಗೂ ಡಿಜಿಟಲ್ ಸೌಲಭ್ಯ ಒದಗಿಸಲಾಗಿದೆ.',
+        },
+        {
+          icon: 'health',
+          category: 'ಆರೋಗ್ಯ',
+          location: 'ಉಡುಪಿ',
+          title: 'ಪ್ರಾಥಮಿಕ ಆರೋಗ್ಯ ಕೇಂದ್ರ ಬಲವರ್ಧನೆ',
+          desc: 'ಸ್ಥಳೀಯ ಆರೋಗ್ಯ ಕೇಂದ್ರಗಳಿಗೆ ಅಗತ್ಯ ಉಪಕರಣ ಮತ್ತು ಸಿಬ್ಬಂದಿ ಸೌಲಭ್ಯ ಹೆಚ್ಚಳ.',
+        },
+        {
+          icon: 'infra',
+          category: 'ಮೂಲಸೌಕರ್ಯ',
+          location: 'ಕಾಪು',
+          title: 'ವಿದ್ಯುತ್ ಮತ್ತು ಒಳಚರಂಡಿ ಸುಧಾರಣೆ',
+          desc: 'ವಿದ್ಯುತ್ ಪೂರೈಕೆ ಮತ್ತು ಒಳಚರಂಡಿ ವ್ಯವಸ್ಥೆಯ ಆಧುನೀಕರಣ ಕಾಮಗಾರಿ.',
+        },
+        {
+          icon: 'youth',
+          category: 'ಯುವಜನ ಮತ್ತು ಕ್ರೀಡೆ',
+          location: 'ಉಡುಪಿ',
+          title: 'ಕ್ರೀಡಾ ಮೈದಾನ ಹಾಗೂ ಸಮುದಾಯ ಭವನ',
+          desc: 'ಯುವಜನರಿಗಾಗಿ ಹೊಸ ಕ್ರೀಡಾ ಮೈದಾನ ಮತ್ತು ಸಮುದಾಯ ಭವನ ನಿರ್ಮಾಣ.',
+        },
+      ],
+    },
+    gallery: {
+      kicker: 'ಗ್ಯಾಲರಿ',
+      heading: 'ಫೋಟೋ ಗ್ಯಾಲರಿ',
+      subtitle: 'ಕ್ಷೇತ್ರದ ಕಾರ್ಯಕ್ರಮಗಳು ಮತ್ತು ಭೇಟಿಗಳ ಕೆಲವು ಕ್ಷಣಗಳು.',
+    },
+    report: {
+      kicker: 'ವರದಿ ಪತ್ರ',
+      heading: 'ರಿಪೋರ್ಟ್ ಕಾರ್ಡ್',
+      subtitle: 'ವರ್ಷವಾರು ಅಭಿವೃದ್ಧಿ ವರದಿಗಳನ್ನು ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ.',
+      suffix: 'ವರದಿ',
+    },
+    footer: {
+      tagline: 'ಕಾಪು ಮತ್ತು ಉಡುಪಿಯ ಸೇವೆಗೆ ಸಮರ್ಪಿತ.',
+      quickLinks: 'ತ್ವರಿತ ಲಿಂಕ್‌ಗಳು',
+      contact: 'ಸಂಪರ್ಕಿಸಿ',
+      phone: '+91 XXXXX XXXXX',
+      email: 'info@gurmesureshshetty.in',
+      address: 'ಕಾಪು, ಉಡುಪಿ ಜಿಲ್ಲೆ, ಕರ್ನಾಟಕ',
+      copyright: (year) => `© ${year} ಗುರ್ಮೆ ಸುರೇಶ್ ಶೆಟ್ಟಿ. ಎಲ್ಲಾ ಹಕ್ಕುಗಳನ್ನು ಕಾಯ್ದಿರಿಸಲಾಗಿದೆ.`,
+      credit: 'Managed by Yatharth',
+    },
+    chat: {
+      fabLabel: 'MLA ಜೊತೆ ಮಾತನಾಡಿ',
+      fabOpenLabel: 'ಚಾಟ್ ಬಾಟ್ ತೆರೆಯಿರಿ',
+      panelTitle: 'ಸಹಾಯಕ ಬಾಟ್',
+      closeLabel: 'ಚಾಟ್ ಮುಚ್ಚಿ',
+      resetLabel: 'ಹೊಸ ಸಮಸ್ಯೆ ದಾಖಲಿಸಿ',
+      selectPlaceholder: '-- ಆಯ್ಕೆಮಾಡಿ --',
+      nextLabel: 'ಮುಂದೆ',
+      textareaPlaceholder: 'ಸಮಸ್ಯೆಯ ವಿವರ ಬರೆಯಿರಿ...',
+      cameraLabel: 'ಫೋಟೋ ತೆಗೆಯಿರಿ',
+      cameraChangeLabel: 'ಫೋಟೋ ಬದಲಾಯಿಸಿ',
+      removeImageLabel: 'ಫೋಟೋ ತೆಗೆದುಹಾಕಿ',
+      submitLabel: 'ಸಲ್ಲಿಸಿ',
+      sendingLabel: 'ಕಳುಹಿಸಲಾಗುತ್ತಿದೆ...',
+      doneReply: 'ಧನ್ಯವಾದಗಳು! ನಿಮ್ಮ ಸಮಸ್ಯೆ ದಾಖಲಾಗಿದೆ. ನಾವು ಶೀಘ್ರದಲ್ಲೇ ನಿಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸುತ್ತೇವೆ.',
+      errorReply: 'ಕ್ಷಮಿಸಿ, ಸಲ್ಲಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.',
+      defaultPhotoText: 'ಫೋಟೋ ಕಳುಹಿಸಲಾಗಿದೆ.',
+      steps: [
+        {
+          bot: 'ನಮಸ್ಕಾರ! ನಾನು ಗುರ್ಮೆ ಸುರೇಶ್ ಶೆಟ್ಟಿ ಅವರ ಸಹಾಯಕ ಬಾಟ್. ನಿಮ್ಮ ಸಮಸ್ಯೆ ದಾಖಲಿಸಲು ಸ್ವಲ್ಪ ಮಾಹಿತಿ ಬೇಕಾಗುತ್ತದೆ. ಮೊದಲಿಗೆ, ನಿಮ್ಮ ಹೆಸರು ತಿಳಿಸಿ.',
+          placeholder: 'ನಿಮ್ಮ ಪೂರ್ಣ ಹೆಸರು',
+        },
+        {
+          bot: 'ಧನ್ಯವಾದಗಳು! ಈಗ ನಿಮ್ಮ ಫೋನ್ ಸಂಖ್ಯೆ ತಿಳಿಸಿ.',
+          placeholder: '10 ಅಂಕಿಯ ಫೋನ್ ಸಂಖ್ಯೆ',
+        },
+        { bot: 'ನಿಮ್ಮ ಪಂಚಾಯತ್ ಆಯ್ಕೆಮಾಡಿ.' },
+        { bot: 'ನಿಮ್ಮ ಸಮಸ್ಯೆಯ ವಿಧ ಆಯ್ಕೆಮಾಡಿ.' },
+        { bot: 'ದಯವಿಟ್ಟು ನಿಮ್ಮ ಸಮಸ್ಯೆಯ ವಿವರ ಬರೆಯಿರಿ. ಅಗತ್ಯವಿದ್ದರೆ ಫೋಟೋ ಕೂಡ ಸೇರಿಸಬಹುದು.' },
+      ],
+    },
+  },
+  en: {
+    meta: {
+      bjpAlt: 'BJP',
+      modiAlt: 'Narendra Modi',
+      brandName: 'Gurme Suresh Shetty',
+      brandRole: 'MLA, Kaup',
+      menuLabel: 'Menu',
+      closeLabel: 'Close',
+    },
+    nav: [
+      { id: 'hero', label: 'Home' },
+      { id: 'about', label: 'About' },
+      { id: 'works', label: 'Works' },
+      { id: 'gallery', label: 'Gallery' },
+      { id: 'report-card', label: 'Report Card' },
+      { id: 'news', label: 'News' },
+      { id: 'contact', label: 'Contact' },
+    ],
+    taglines: [
+      {
+        accent: 'Committed to',
+        rest: 'Progress.',
+        sub: 'Dedicated to serving Kaup and Udupi.',
+      },
+      {
+        accent: 'Committed to',
+        rest: 'Every Citizen.',
+        sub: 'Serving the development of Udupi district.',
+      },
+      {
+        accent: 'Building a',
+        rest: 'Bright Future.',
+        sub: 'For the development of Kaup and Udupi.',
+      },
+    ],
+    slogans: [
+      {
+        sans: 'Yato Dharmastato Jayah',
+        meaning: 'Service to the Nation is Service to Dharma',
+        cite: 'Mahabharata',
+      },
+      {
+        sans: 'Karmanye Vadhikaraste Ma Phaleshu Kadachana',
+        meaning: 'Duty comes first, not the desire for results',
+        cite: 'Bhagavad Gita 2.47',
+      },
+      {
+        sans: 'Shreyan Swadharmo Vigunah Paradharmat Swanushthitat',
+        meaning: "Following one's own duty is true service",
+        cite: 'Bhagavad Gita 3.35',
+      },
+    ],
+    about: {
+      kicker: 'About the Leader',
+      role: 'BJP · Kaup, Udupi',
+      body: [
+        "A dedicated people's leader who has worked closely with the people of Kaup and Udupi for years, listening to their concerns and standing with them at every step.",
+        'Deeply rooted in the community he serves, he believes in transparent, accessible leadership and works tirelessly to bring real progress to the everyday lives of every citizen.',
+        'From infrastructure and civic amenities to youth development and community welfare, his focus remains on practical, lasting change — built hand-in-hand with the people of the constituency.',
+      ],
+    },
+    works: {
+      kicker: 'Achievements',
+      heading: 'Development Works',
+      subtitle: 'A look at major development works completed in Kaup and Udupi.',
+      readMore: 'Read More',
+      items: [
+        {
+          icon: 'road',
+          category: 'Road Development',
+          location: 'Kaup',
+          title: 'Major Road Asphalting',
+          desc: 'Widening and asphalting of key connecting roads in Kaup completed.',
+        },
+        {
+          icon: 'water',
+          category: 'Drinking Water',
+          location: 'Udupi',
+          title: 'Clean Drinking Water Scheme',
+          desc: 'Continuous, clean drinking water supply provided to rural areas.',
+        },
+        {
+          icon: 'education',
+          category: 'Education',
+          location: 'Kaup',
+          title: 'Government School Infrastructure',
+          desc: 'New classrooms, furniture, and digital facilities provided in government schools.',
+        },
+        {
+          icon: 'health',
+          category: 'Health',
+          location: 'Udupi',
+          title: 'Primary Health Centre Strengthening',
+          desc: 'Essential equipment and staffing increased at local health centres.',
+        },
+        {
+          icon: 'infra',
+          category: 'Infrastructure',
+          location: 'Kaup',
+          title: 'Electricity and Drainage Improvement',
+          desc: 'Modernization of power supply and drainage systems.',
+        },
+        {
+          icon: 'youth',
+          category: 'Youth & Sports',
+          location: 'Udupi',
+          title: 'Sports Ground & Community Hall',
+          desc: 'New sports ground and community hall built for the youth.',
+        },
+      ],
+    },
+    gallery: {
+      kicker: 'Gallery',
+      heading: 'Photo Gallery',
+      subtitle: 'Moments from constituency programs and visits.',
+    },
+    report: {
+      kicker: 'Report Card',
+      heading: 'Report Card',
+      subtitle: 'Download year-wise development reports.',
+      suffix: 'Report',
+    },
+    footer: {
+      tagline: 'Dedicated to serving Kaup and Udupi.',
+      quickLinks: 'Quick Links',
+      contact: 'Contact',
+      phone: '+91 XXXXX XXXXX',
+      email: 'info@gurmesureshshetty.in',
+      address: 'Kaup, Udupi District, Karnataka',
+      copyright: (year) => `© ${year} Gurme Suresh Shetty. All rights reserved.`,
+      credit: 'Managed by Yatharth',
+    },
+    chat: {
+      fabLabel: 'Talk to MLA',
+      fabOpenLabel: 'Open chat bot',
+      panelTitle: 'Assistant Bot',
+      closeLabel: 'Close chat',
+      resetLabel: 'File a new grievance',
+      selectPlaceholder: '-- Select --',
+      nextLabel: 'Next',
+      textareaPlaceholder: 'Describe your issue...',
+      cameraLabel: 'Take photo',
+      cameraChangeLabel: 'Change photo',
+      removeImageLabel: 'Remove photo',
+      submitLabel: 'Submit',
+      sendingLabel: 'Sending...',
+      doneReply: 'Thank you! Your grievance has been recorded. We will contact you shortly.',
+      errorReply: "Sorry, we couldn't submit that. Please try again.",
+      defaultPhotoText: 'Photo sent.',
+      steps: [
+        {
+          bot: "Hello! I'm Gurme Suresh Shetty's assistant bot. I'll need a few details to file your grievance. First, please tell me your name.",
+          placeholder: 'Your full name',
+        },
+        {
+          bot: 'Thank you! Now please tell me your phone number.',
+          placeholder: '10-digit phone number',
+        },
+        { bot: 'Select your panchayat.' },
+        { bot: 'Select your issue type.' },
+        { bot: 'Please describe your issue. You can also attach a photo if needed.' },
+      ],
+    },
+  },
+}
+
 function App() {
+  const [lang, setLang] = useState('kn')
+  const t = content[lang]
+
   const [index, setIndex] = useState(0)
   const [aboutIndex, setAboutIndex] = useState(0)
   const [menuOpen, setMenuOpen] = useState(false)
   const [sloganIndex, setSloganIndex] = useState(0)
   const [chatOpen, setChatOpen] = useState(false)
   const [chatMessages, setChatMessages] = useState([
-    { from: 'bot', text: chatSteps[0].bot },
+    { from: 'bot', text: content.kn.chat.steps[0].bot },
   ])
   const [stepIndex, setStepIndex] = useState(0)
   const [fieldValue, setFieldValue] = useState('')
   const [detailsText, setDetailsText] = useState('')
+  const [detailsImage, setDetailsImage] = useState(null)
+  const [detailsImagePreview, setDetailsImagePreview] = useState(null)
   const [chatSubmitting, setChatSubmitting] = useState(false)
   const [chatForm, setChatForm] = useState({
     name: '',
@@ -230,7 +474,10 @@ function App() {
     image: null,
   })
   const chatBodyRef = useRef(null)
-  const currentStep = chatSteps[stepIndex]
+
+  const stepBase = chatStepsBase[stepIndex]
+  const stepText = stepBase ? t.chat.steps[stepIndex] : null
+  const currentStep = stepBase && stepText ? { ...stepBase, ...stepText } : null
 
   const goToSection = (id) => {
     setMenuOpen(false)
@@ -238,8 +485,21 @@ function App() {
   }
 
   useEffect(() => {
+    document.documentElement.lang = lang
+  }, [lang])
+
+  useEffect(() => {
+    // Only refresh the greeting if the chat hasn't been used yet
+    setChatMessages((m) =>
+      m.length === 1 && stepIndex === 0
+        ? [{ from: 'bot', text: t.chat.steps[0].bot }]
+        : m,
+    )
+  }, [lang, t, stepIndex])
+
+  useEffect(() => {
     const id = setInterval(() => {
-      setSloganIndex((i) => (i + 1) % slogans.length)
+      setSloganIndex((i) => (i + 1) % content.kn.slogans.length)
     }, 5000)
     return () => clearInterval(id)
   }, [])
@@ -249,6 +509,16 @@ function App() {
       chatBodyRef.current.scrollTop = chatBodyRef.current.scrollHeight
     }
   }, [chatMessages, chatOpen])
+
+  useEffect(() => {
+    if (!detailsImage) {
+      setDetailsImagePreview(null)
+      return
+    }
+    const url = URL.createObjectURL(detailsImage)
+    setDetailsImagePreview(url)
+    return () => URL.revokeObjectURL(url)
+  }, [detailsImage])
 
   const sendBotReply = (text) => {
     setTimeout(() => {
@@ -262,14 +532,19 @@ function App() {
     const next = stepIndex + 1
     setStepIndex(next)
     setFieldValue('')
-    sendBotReply(next < chatSteps.length ? chatSteps[next].bot : chatDoneReply)
+    sendBotReply(next < chatStepsBase.length ? t.chat.steps[next].bot : t.chat.doneReply)
   }
 
   const handleChatFieldSubmit = (e) => {
     e.preventDefault()
     const val = fieldValue.trim()
     if (!val) return
-    advanceChatStep(currentStep.key, val, val)
+    let displayText = val
+    if (currentStep.type === 'select') {
+      const idx = currentStep.optionsKn.indexOf(val)
+      displayText = (lang === 'en' ? currentStep.optionsEn : currentStep.optionsKn)[idx]
+    }
+    advanceChatStep(currentStep.key, val, displayText)
   }
 
   const submitDetails = async (text, image) => {
@@ -297,10 +572,11 @@ function App() {
       if (!res.ok) throw new Error('submit failed')
 
       setDetailsText('')
-      setStepIndex(chatSteps.length)
-      sendBotReply(chatDoneReply)
+      setDetailsImage(null)
+      setStepIndex(chatStepsBase.length)
+      sendBotReply(t.chat.doneReply)
     } catch {
-      sendBotReply(chatErrorReply)
+      sendBotReply(t.chat.errorReply)
     } finally {
       setChatSubmitting(false)
     }
@@ -308,15 +584,15 @@ function App() {
 
   const handleChatDetailsSubmit = (e) => {
     e.preventDefault()
-    const text = detailsText.trim()
+    const text = detailsText.trim() || (detailsImage ? t.chat.defaultPhotoText : '')
     if (!text) return
-    submitDetails(text, null)
+    submitDetails(text, detailsImage)
   }
 
-  const handleCameraCapture = (e) => {
+  const handleImageSelect = (e) => {
     const file = e.target.files?.[0]
     if (!file) return
-    submitDetails(detailsText.trim() || 'ಫೋಟೋ ಕಳುಹಿಸಲಾಗಿದೆ.', file)
+    setDetailsImage(file)
     e.target.value = ''
   }
 
@@ -332,8 +608,9 @@ function App() {
     setStepIndex(0)
     setFieldValue('')
     setDetailsText('')
+    setDetailsImage(null)
     setChatSubmitting(false)
-    setChatMessages([{ from: 'bot', text: chatSteps[0].bot }])
+    setChatMessages([{ from: 'bot', text: t.chat.steps[0].bot }])
   }
 
   useEffect(() => {
@@ -345,7 +622,7 @@ function App() {
 
   useEffect(() => {
     const id = setInterval(() => {
-      setIndex((i) => (i + 1) % taglines.length)
+      setIndex((i) => (i + 1) % content.kn.taglines.length)
     }, 5000)
     return () => clearInterval(id)
   }, [])
@@ -466,18 +743,37 @@ function App() {
           '--bg-mobile': `url(${bannerImgMobile})`,
         }}
       >
-        <div className="hero-brand">
-          <img src={bjpLogo} alt="ಬಿಜೆಪಿ" className="hero-logo" />
-          <div className="hero-brand-text">
-            <p className="hero-brand-name">ಗುರ್ಮೆ ಸುರೇಶ್ ಶೆಟ್ಟಿ</p>
-            <p className="hero-brand-role">ಕಾಪು ಶಾಸಕ</p>
+        <div className="hero-top-left">
+          <div className="hero-brand">
+            <img src={bjpLogo} alt={t.meta.bjpAlt} className="hero-logo" />
+            <div className="hero-brand-text">
+              <p className="hero-brand-name">{t.meta.brandName}</p>
+              <p className="hero-brand-role">{t.meta.brandRole}</p>
+            </div>
+          </div>
+
+          <div className="lang-toggle" role="group" aria-label="Language / ಭಾಷೆ">
+            <button
+              type="button"
+              className={lang === 'kn' ? 'active' : ''}
+              onClick={() => setLang('kn')}
+            >
+              ಕನ್ನಡ
+            </button>
+            <button
+              type="button"
+              className={lang === 'en' ? 'active' : ''}
+              onClick={() => setLang('en')}
+            >
+              EN
+            </button>
           </div>
         </div>
 
         <button
           type="button"
           className={`hero-menu${menuOpen ? ' open' : ''}`}
-          aria-label="ಮೆನು"
+          aria-label={t.meta.menuLabel}
           aria-expanded={menuOpen}
           onClick={() => setMenuOpen((o) => !o)}
         >
@@ -490,7 +786,7 @@ function App() {
           <button
             type="button"
             className="nav-overlay-backdrop"
-            aria-label="ಮುಚ್ಚಿ"
+            aria-label={t.meta.closeLabel}
             onClick={() => setMenuOpen(false)}
           ></button>
           <nav className="nav-overlay-panel">
@@ -505,11 +801,11 @@ function App() {
 
             <div className="nav-overlay-content">
               <div className="nav-overlay-logo-modi">
-                <img src={modiLogo} alt="ನರೇಂದ್ರ ಮೋದಿ" />
+                <img src={modiLogo} alt={t.meta.modiAlt} />
               </div>
               <div className="nav-overlay-links">
                 <ul>
-                  {navLinks.map((link) => (
+                  {t.nav.map((link) => (
                     <li key={link.id}>
                       <a
                         href={`#${link.id}`}
@@ -583,7 +879,7 @@ function App() {
               </div>
 
               <div className="nav-overlay-slogan">
-                {slogans.map((s, i) => (
+                {t.slogans.map((s, i) => (
                   <div
                     key={s.cite}
                     className={`nav-overlay-slogan-slide${
@@ -591,7 +887,7 @@ function App() {
                     }`}
                   >
                     <p className="nav-overlay-slogan-sans">{s.sans}</p>
-                    <p className="nav-overlay-slogan-kn">{s.kn}</p>
+                    <p className="nav-overlay-slogan-kn">{s.meaning}</p>
                     <p className="nav-overlay-slogan-cite">&mdash; {s.cite}</p>
                   </div>
                 ))}
@@ -601,13 +897,13 @@ function App() {
         </div>
 
         <div className="hero-taglines">
-          {taglines.map((t, i) => (
-            <div key={t.accent} className={i === index ? 'active' : ''}>
+          {t.taglines.map((tl, i) => (
+            <div key={tl.rest} className={i === index ? 'active' : ''}>
               <p className="main">
-                <span className="accent">{t.accent}</span> {t.rest}
+                <span className="accent">{tl.accent}</span> {tl.rest}
               </p>
               <p className="sub">
-                <span>{t.sub}</span>
+                <span>{tl.sub}</span>
               </p>
             </div>
           ))}
@@ -620,7 +916,7 @@ function App() {
             <img
               key={img}
               src={img}
-              alt="ಗುರ್ಮೆ ಸುರೇಶ್ ಶೆಟ್ಟಿ"
+              alt={t.meta.brandName}
               className={i === aboutIndex ? 'active' : ''}
             />
           ))}
@@ -628,31 +924,17 @@ function App() {
 
         <div className="about-text">
           <div className="about-header">
-            <p className="about-kicker">ನಾಯಕರ ಬಗ್ಗೆ</p>
+            <p className="about-kicker">{t.about.kicker}</p>
             <h2>
-              <span className="accent">ಗುರ್ಮೆ ಸುರೇಶ್ ಶೆಟ್ಟಿ</span>
+              <span className="accent">{t.meta.brandName}</span>
             </h2>
-            <p className="about-role">ಬಿಜೆಪಿ &middot; ಕಾಪು, ಉಡುಪಿ</p>
+            <p className="about-role">{t.about.role}</p>
           </div>
 
           <div className="about-body">
-            <p>
-              ಕಾಪು ಮತ್ತು ಉಡುಪಿಯ ಜನರೊಂದಿಗೆ ವರ್ಷಗಳಿಂದ ನಿಕಟವಾಗಿ
-              ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತಾ, ಅವರ ಸಮಸ್ಯೆಗಳು ಮತ್ತು ಕಳಕಳಿಗಳನ್ನು ಆಲಿಸಿ,
-              ಪ್ರತಿಯೊಂದು ಹೆಜ್ಜೆಯಲ್ಲೂ ಅವರೊಂದಿಗೆ ನಿಂತಿರುವ ಸಮರ್ಪಿತ ಜನಪರ ನಾಯಕ.
-            </p>
-            <p>
-              ತಾವು ಸೇವೆ ಸಲ್ಲಿಸುವ ಸಮುದಾಯದಲ್ಲಿ ಬೇರೂರಿರುವ ಅವರು, ಪಾರದರ್ಶಕ ಹಾಗೂ
-              ಸುಲಭವಾಗಿ ಜನರನ್ನು ತಲುಪಬಹುದಾದ ನಾಯಕತ್ವದಲ್ಲಿ ನಂಬಿಕೆ ಇಟ್ಟು,
-              ಪ್ರತಿಯೊಬ್ಬ ನಾಗರಿಕನ ದೈನಂದಿನ ಬದುಕಿನಲ್ಲಿ ನೈಜ ಪ್ರಗತಿಯನ್ನು ಸಾಧಿಸಲು
-              ಸದಾ ಶ್ರಮಿಸುತ್ತಿದ್ದಾರೆ.
-            </p>
-            <p>
-              ಮೂಲಸೌಕರ್ಯ ಮತ್ತು ನಾಗರಿಕ ಸೌಲಭ್ಯಗಳಿಂದ ಹಿಡಿದು ಯುವಜನರ ಅಭಿವೃದ್ಧಿ ಹಾಗೂ
-              ಸಮುದಾಯದ ಕಲ್ಯಾಣದವರೆಗೆ, ಅವರ ಗಮನ ಪ್ರಾಯೋಗಿಕ ಮತ್ತು ಶಾಶ್ವತ
-              ಬದಲಾವಣೆಯ ಮೇಲಿದೆ&mdash;ಈ ಬದಲಾವಣೆ ಕ್ಷೇತ್ರದ ಜನರೊಂದಿಗೆ ಕೈಜೋಡಿಸಿ
-              ನಿರ್ಮಿಸಲ್ಪಟ್ಟಿದೆ.
-            </p>
+            {t.about.body.map((p) => (
+              <p key={p}>{p}</p>
+            ))}
           </div>
         </div>
       </section>
@@ -661,16 +943,13 @@ function App() {
         <div className="works-scroll-wrap" ref={worksWrapRef}>
           <div className="works-sticky">
             <div className="works-heading">
-              <p className="works-kicker">ಸಾಧನೆಗಳು</p>
-              <h2>ಅಭಿವೃದ್ಧಿ ಕಾರ್ಯಗಳು</h2>
-              <p className="works-subtitle">
-                ಕಾಪು ಮತ್ತು ಉಡುಪಿಯಲ್ಲಿ ಪೂರ್ಣಗೊಂಡ ಪ್ರಮುಖ ಅಭಿವೃದ್ಧಿ ಕಾರ್ಯಗಳ
-                ಒಂದು ನೋಟ.
-              </p>
+              <p className="works-kicker">{t.works.kicker}</p>
+              <h2>{t.works.heading}</h2>
+              <p className="works-subtitle">{t.works.subtitle}</p>
             </div>
 
             <div className="works-track" ref={worksTrackRef}>
-              {works.map((w) => (
+              {t.works.items.map((w) => (
                 <div className="work-card" key={w.title}>
                   <div className="work-image">
                     <div className="work-image-placeholder">
@@ -689,7 +968,7 @@ function App() {
                   <div className="work-card-body">
                     <h3>{w.title}</h3>
                     <button type="button" className="work-read-more">
-                      ಇನ್ನಷ್ಟು ಓದಿ
+                      {t.works.readMore}
                       <span aria-hidden="true">&rarr;</span>
                     </button>
                   </div>
@@ -702,11 +981,9 @@ function App() {
 
       <section id="gallery" className="gallery-section">
         <div className="gallery-heading">
-          <p className="gallery-kicker">ಗ್ಯಾಲರಿ</p>
-          <h2>ಫೋಟೋ ಗ್ಯಾಲರಿ</h2>
-          <p className="gallery-subtitle">
-            ಕ್ಷೇತ್ರದ ಕಾರ್ಯಕ್ರಮಗಳು ಮತ್ತು ಭೇಟಿಗಳ ಕೆಲವು ಕ್ಷಣಗಳು.
-          </p>
+          <p className="gallery-kicker">{t.gallery.kicker}</p>
+          <h2>{t.gallery.heading}</h2>
+          <p className="gallery-subtitle">{t.gallery.subtitle}</p>
         </div>
 
         <div className="gallery-row" ref={galleryRowRef}>
@@ -718,7 +995,7 @@ function App() {
                 ref={(el) => (galleryItemRefs.current[i] = el)}
               >
                 {g.src ? (
-                  <img src={g.src} alt="ಗುರ್ಮೆ ಸುರೇಶ್ ಶೆಟ್ಟಿ" />
+                  <img src={g.src} alt={t.meta.brandName} />
                 ) : (
                   <div className="gallery-placeholder">
                     <svg
@@ -742,11 +1019,9 @@ function App() {
       </section>
 
       <section id="report-card" className="report-section">
-        <p className="report-kicker">ವರದಿ ಪತ್ರ</p>
-        <h2 className="report-heading">ರಿಪೋರ್ಟ್ ಕಾರ್ಡ್</h2>
-        <p className="report-subtitle">
-          ವರ್ಷವಾರು ಅಭಿವೃದ್ಧಿ ವರದಿಗಳನ್ನು ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ.
-        </p>
+        <p className="report-kicker">{t.report.kicker}</p>
+        <h2 className="report-heading">{t.report.heading}</h2>
+        <p className="report-subtitle">{t.report.subtitle}</p>
 
         <div className="report-buttons">
           {reportYears.map((year) => (
@@ -761,7 +1036,7 @@ function App() {
               >
                 <path d="M12 4v11m0 0 4-4m-4 4-4-4M5 19h14" />
               </svg>
-              {year} ವರದಿ
+              {year} {t.report.suffix}
             </a>
           ))}
         </div>
@@ -771,15 +1046,13 @@ function App() {
         <div className="footer-main">
           <div className="footer-brand">
             <div className="footer-brand-row">
-              <img src={bjpLogo} alt="ಬಿಜೆಪಿ" className="footer-logo" />
+              <img src={bjpLogo} alt={t.meta.bjpAlt} className="footer-logo" />
               <div>
-                <p className="footer-name">ಗುರ್ಮೆ ಸುರೇಶ್ ಶೆಟ್ಟಿ</p>
-                <p className="footer-role">ಕಾಪು ಶಾಸಕ</p>
+                <p className="footer-name">{t.meta.brandName}</p>
+                <p className="footer-role">{t.meta.brandRole}</p>
               </div>
             </div>
-            <p className="footer-tagline">
-              ಕಾಪು ಮತ್ತು ಉಡುಪಿಯ ಸೇವೆಗೆ ಸಮರ್ಪಿತ.
-            </p>
+            <p className="footer-tagline">{t.footer.tagline}</p>
             <div className="footer-social">
               <a
                 href="https://www.instagram.com/gurmesureshshetty/?hl=en"
@@ -839,9 +1112,9 @@ function App() {
           </div>
 
           <div className="footer-col">
-            <h4>ತ್ವರಿತ ಲಿಂಕ್‌ಗಳು</h4>
+            <h4>{t.footer.quickLinks}</h4>
             <nav className="footer-links">
-              {navLinks
+              {t.nav
                 .filter((link) => link.id !== 'hero')
                 .map((link) => (
                   <a
@@ -859,7 +1132,7 @@ function App() {
           </div>
 
           <div className="footer-col">
-            <h4>ಸಂಪರ್ಕಿಸಿ</h4>
+            <h4>{t.footer.contact}</h4>
             <ul className="footer-contact">
               <li>
                 <svg
@@ -872,7 +1145,7 @@ function App() {
                 >
                   <path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z" />
                 </svg>
-                <span>+91 XXXXX XXXXX</span>
+                <span>{t.footer.phone}</span>
               </li>
               <li>
                 <svg
@@ -886,7 +1159,7 @@ function App() {
                   <rect x="3" y="5" width="18" height="14" rx="2" />
                   <path d="m4 7 8 6 8-6" />
                 </svg>
-                <span>info@gurmesureshshetty.in</span>
+                <span>{t.footer.email}</span>
               </li>
               <li>
                 <svg
@@ -900,18 +1173,15 @@ function App() {
                   <path d="M12 21s7-6.5 7-11.5A7 7 0 0 0 5 9.5C5 14.5 12 21 12 21Z" />
                   <circle cx="12" cy="9.5" r="2.3" />
                 </svg>
-                <span>ಕಾಪು, ಉಡುಪಿ ಜಿಲ್ಲೆ, ಕರ್ನಾಟಕ</span>
+                <span>{t.footer.address}</span>
               </li>
             </ul>
           </div>
         </div>
 
         <div className="footer-bottom">
-          <p>
-            &copy; {new Date().getFullYear()} ಗುರ್ಮೆ ಸುರೇಶ್ ಶೆಟ್ಟಿ. ಎಲ್ಲಾ
-            ಹಕ್ಕುಗಳನ್ನು ಕಾಯ್ದಿರಿಸಲಾಗಿದೆ.
-          </p>
-          <p className="footer-credit">Managed by Yatharth</p>
+          <p>{t.footer.copyright(new Date().getFullYear())}</p>
+          <p className="footer-credit">{t.footer.credit}</p>
         </div>
       </footer>
 
@@ -919,12 +1189,12 @@ function App() {
         {chatOpen && (
           <div className="chat-panel">
             <div className="chat-panel-header">
-              <span>ಸಹಾಯಕ ಬಾಟ್</span>
+              <span>{t.chat.panelTitle}</span>
               <button
                 type="button"
                 className="chat-panel-close"
                 onClick={() => setChatOpen(false)}
-                aria-label="ಚಾಟ್ ಮುಚ್ಚಿ"
+                aria-label={t.chat.closeLabel}
               >
                 &times;
               </button>
@@ -946,47 +1216,40 @@ function App() {
                   className="chat-reset-btn"
                   onClick={resetChat}
                 >
-                  ಹೊಸ ಸಮಸ್ಯೆ ದಾಖಲಿಸಿ
+                  {t.chat.resetLabel}
                 </button>
               )}
             </div>
 
-            {currentStep && currentStep.type === 'select' && (
-              <form className="chat-step-form" onSubmit={(e) => e.preventDefault()}>
-                <select
-                  value={fieldValue}
-                  onChange={(e) => {
-                    const val = e.target.value
-                    if (!val) return
-                    setFieldValue(val)
-                    advanceChatStep(currentStep.key, val, val)
-                  }}
-                >
-                  <option value="" disabled>
-                    -- ಆಯ್ಕೆಮಾಡಿ --
-                  </option>
-                  {currentStep.options.map((opt) => (
-                    <option key={opt} value={opt}>
-                      {opt}
-                    </option>
-                  ))}
-                </select>
-              </form>
-            )}
-
-            {currentStep && (currentStep.type === 'text' || currentStep.type === 'tel') && (
+            {currentStep && currentStep.type !== 'details' && (
               <form className="chat-step-form" onSubmit={handleChatFieldSubmit}>
-                <input
-                  type={currentStep.type}
-                  value={fieldValue}
-                  onChange={(e) => setFieldValue(e.target.value)}
-                  placeholder={currentStep.placeholder}
-                  autoComplete={currentStep.autoComplete}
-                  inputMode={currentStep.type === 'tel' ? 'numeric' : undefined}
-                  maxLength={currentStep.type === 'tel' ? 10 : undefined}
-                />
+                {currentStep.type === 'select' ? (
+                  <select
+                    value={fieldValue}
+                    onChange={(e) => setFieldValue(e.target.value)}
+                  >
+                    <option value="" disabled>
+                      {t.chat.selectPlaceholder}
+                    </option>
+                    {currentStep.optionsKn.map((val, i) => (
+                      <option key={val} value={val}>
+                        {(lang === 'en' ? currentStep.optionsEn : currentStep.optionsKn)[i]}
+                      </option>
+                    ))}
+                  </select>
+                ) : (
+                  <input
+                    type={currentStep.type}
+                    value={fieldValue}
+                    onChange={(e) => setFieldValue(e.target.value)}
+                    placeholder={currentStep.placeholder}
+                    autoComplete={currentStep.autoComplete}
+                    inputMode={currentStep.type === 'tel' ? 'numeric' : undefined}
+                    maxLength={currentStep.type === 'tel' ? 10 : undefined}
+                  />
+                )}
                 <button type="submit" disabled={!fieldValue.trim()}>
-                  ಮುಂದೆ
+                  {t.chat.nextLabel}
                 </button>
               </form>
             )}
@@ -996,17 +1259,31 @@ function App() {
                 className="chat-details-form"
                 onSubmit={handleChatDetailsSubmit}
               >
+                {detailsImagePreview && (
+                  <div className="chat-image-preview">
+                    <img src={detailsImagePreview} alt="" />
+                    <button
+                      type="button"
+                      className="chat-image-remove"
+                      onClick={() => setDetailsImage(null)}
+                      disabled={chatSubmitting}
+                      aria-label={t.chat.removeImageLabel}
+                    >
+                      &times;
+                    </button>
+                  </div>
+                )}
                 <textarea
                   value={detailsText}
                   onChange={(e) => setDetailsText(e.target.value)}
-                  placeholder="ಸಮಸ್ಯೆಯ ವಿವರ ಬರೆಯಿರಿ..."
+                  placeholder={t.chat.textareaPlaceholder}
                   rows={3}
                   disabled={chatSubmitting}
                 />
                 <div className="chat-details-actions">
                   <label
                     className={`chat-camera-btn${chatSubmitting ? ' disabled' : ''}`}
-                    aria-label="ಫೋಟೋ ತೆಗೆಯಿರಿ"
+                    aria-label={detailsImage ? t.chat.cameraChangeLabel : t.chat.cameraLabel}
                   >
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M4 8.5a2 2 0 0 1 2-2h1.2l.8-1.5a1.5 1.5 0 0 1 1.32-.8h5.36a1.5 1.5 0 0 1 1.32.8l.8 1.5H18a2 2 0 0 1 2 2V17a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z" />
@@ -1016,13 +1293,16 @@ function App() {
                       type="file"
                       accept="image/*"
                       capture="environment"
-                      onChange={handleCameraCapture}
+                      onChange={handleImageSelect}
                       disabled={chatSubmitting}
                       hidden
                     />
                   </label>
-                  <button type="submit" disabled={!detailsText.trim() || chatSubmitting}>
-                    {chatSubmitting ? 'ಕಳುಹಿಸಲಾಗುತ್ತಿದೆ...' : 'ಸಲ್ಲಿಸಿ'}
+                  <button
+                    type="submit"
+                    disabled={(!detailsText.trim() && !detailsImage) || chatSubmitting}
+                  >
+                    {chatSubmitting ? t.chat.sendingLabel : t.chat.submitLabel}
                   </button>
                 </div>
               </form>
@@ -1033,7 +1313,7 @@ function App() {
         <div className="chat-fab-row">
           {!chatOpen && (
             <span className="chat-fab-label" onClick={() => setChatOpen(true)}>
-              MLA ಜೊತೆ ಮಾತನಾಡಿ
+              {t.chat.fabLabel}
             </span>
           )}
 
@@ -1041,7 +1321,7 @@ function App() {
             type="button"
             className="chat-fab"
             onClick={() => setChatOpen((o) => !o)}
-            aria-label="ಚಾಟ್ ಬಾಟ್ ತೆರೆಯಿರಿ"
+            aria-label={t.chat.fabOpenLabel}
           >
             {!chatOpen && <span className="chat-fab-ping" aria-hidden="true" />}
             {chatOpen ? (
