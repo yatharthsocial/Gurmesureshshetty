@@ -139,17 +139,17 @@ const content = {
       {
         accent: 'ಪ್ರಗತಿಗೆ',
         rest: 'ಸಮರ್ಪಿತ.',
-        sub: 'ಕಾಪು ಮತ್ತು ಉಡುಪಿನ ಸೇವೆಗೆ ಸಮರ್ಪಿತ.',
+        sub: 'ಕಾಪುವಿನ ಸೇವೆಗೆ ಸಮರ್ಪಿತ.',
       },
       {
         accent: 'ಪ್ರತಿ ನಾಗರಿಕನಿಗೂ',
         rest: 'ಬದ್ಧ.',
-        sub: 'ಉಡುಪಿ ಜಿಲ್ಲೆಯ ಅಭಿವೃದ್ಧಿಗೆ ಸೇವೆ.',
+        sub: 'ಕಾಪುವಿನ ಅಭಿವೃದ್ಧಿಗೆ ಸೇವೆ.',
       },
       {
         accent: 'ಉಜ್ವಲ ಭವಿಷ್ಯದ',
         rest: 'ನಿರ್ಮಾಣ.',
-        sub: 'ಕಾಪು ಮತ್ತು ಉಡುಪಿನ ಅಭಿವೃದ್ಧಿಗಾಗಿ.',
+        sub: 'ಕಾಪುವಿನ ಅಭಿವೃದ್ಧಿಗಾಗಿ.',
       },
     ],
     slogans: [
@@ -171,9 +171,9 @@ const content = {
     ],
     about: {
       kicker: 'ನಾಯಕರ ಬಗ್ಗೆ',
-      role: 'ಬಿಜೆಪಿ · ಕಾಪು, ಉಡುಪಿ',
+      role: 'ಬಿಜೆಪಿ · ಕಾಪು',
       body: [
-        'ಕಾಪು ಮತ್ತು ಉಡುಪಿಯ ಜನರೊಂದಿಗೆ ವರ್ಷಗಳಿಂದ ನಿಕಟವಾಗಿ ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತಾ, ಅವರ ಸಮಸ್ಯೆಗಳು ಮತ್ತು ಕಳಕಳಿಗಳನ್ನು ಆಲಿಸಿ, ಪ್ರತಿಯೊಂದು ಹೆಜ್ಜೆಯಲ್ಲೂ ಅವರೊಂದಿಗೆ ನಿಂತಿರುವ ಸಮರ್ಪಿತ ಜನಪರ ನಾಯಕ.',
+        'ಕಾಪುವಿನ ಜನರೊಂದಿಗೆ ವರ್ಷಗಳಿಂದ ನಿಕಟವಾಗಿ ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತಾ, ಅವರ ಸಮಸ್ಯೆಗಳು ಮತ್ತು ಕಳಕಳಿಗಳನ್ನು ಆಲಿಸಿ, ಪ್ರತಿಯೊಂದು ಹೆಜ್ಜೆಯಲ್ಲೂ ಅವರೊಂದಿಗೆ ನಿಂತಿರುವ ಸಮರ್ಪಿತ ಜನಪರ ನಾಯಕ.',
         'ತಾವು ಸೇವೆ ಸಲ್ಲಿಸುವ ಸಮುದಾಯದಲ್ಲಿ ಬೇರೂರಿರುವ ಅವರು, ಪಾರದರ್ಶಕ ಹಾಗೂ ಸುಲಭವಾಗಿ ಜನರನ್ನು ತಲುಪಬಹುದಾದ ನಾಯಕತ್ವದಲ್ಲಿ ನಂಬಿಕೆ ಇಟ್ಟು, ಪ್ರತಿಯೊಬ್ಬ ನಾಗರಿಕನ ದೈನಂದಿನ ಬದುಕಿನಲ್ಲಿ ನೈಜ ಪ್ರಗತಿಯನ್ನು ಸಾಧಿಸಲು ಸದಾ ಶ್ರಮಿಸುತ್ತಿದ್ದಾರೆ.',
         'ಮೂಲಸೌಕರ್ಯ ಮತ್ತು ನಾಗರಿಕ ಸೌಲಭ್ಯಗಳಿಂದ ಹಿಡಿದು ಯುವಜನರ ಅಭಿವೃದ್ಧಿ ಹಾಗೂ ಸಮುದಾಯದ ಕಲ್ಯಾಣದವರೆಗೆ, ಅವರ ಗಮನ ಪ್ರಾಯೋಗಿಕ ಮತ್ತು ಶಾಶ್ವತ ಬದಲಾವಣೆಯ ಮೇಲಿದೆ—ಈ ಬದಲಾವಣೆ ಕ್ಷೇತ್ರದ ಜನರೊಂದಿಗೆ ಕೈಜೋಡಿಸಿ ನಿರ್ಮಿಸಲ್ಪಟ್ಟಿದೆ.',
       ],
@@ -181,7 +181,7 @@ const content = {
     works: {
       kicker: 'ಸಾಧನೆಗಳು',
       heading: 'ಅಭಿವೃದ್ಧಿ ಕಾರ್ಯಗಳು',
-      subtitle: 'ಕಾಪು ಮತ್ತು ಉಡುಪಿಯಲ್ಲಿ ಪೂರ್ಣಗೊಂಡ ಪ್ರಮುಖ ಅಭಿವೃದ್ಧಿ ಕಾರ್ಯಗಳ ಒಂದು ನೋಟ.',
+      subtitle: 'ಕಾಪುವಿನಲ್ಲಿ ಪೂರ್ಣಗೊಂಡ ಪ್ರಮುಖ ಅಭಿವೃದ್ಧಿ ಕಾರ್ಯಗಳ ಒಂದು ನೋಟ.',
       readMore: 'ಇನ್ನಷ್ಟು ಓದಿ',
       items: [
         {
@@ -194,7 +194,7 @@ const content = {
         {
           icon: 'water',
           category: 'ಕುಡಿಯುವ ನೀರು',
-          location: 'ಉಡುಪಿ',
+          location: 'ಕಾಪು',
           title: 'ಶುದ್ಧ ಕುಡಿಯುವ ನೀರಿನ ಯೋಜನೆ',
           desc: 'ಗ್ರಾಮೀಣ ಪ್ರದೇಶಗಳಿಗೆ ನಿರಂತರ, ಶುದ್ಧ ಕುಡಿಯುವ ನೀರಿನ ಸೌಲಭ್ಯ ಒದಗಿಸಲಾಗಿದೆ.',
         },
@@ -208,7 +208,7 @@ const content = {
         {
           icon: 'health',
           category: 'ಆರೋಗ್ಯ',
-          location: 'ಉಡುಪಿ',
+          location: 'ಕಾಪು',
           title: 'ಪ್ರಾಥಮಿಕ ಆರೋಗ್ಯ ಕೇಂದ್ರ ಬಲವರ್ಧನೆ',
           desc: 'ಸ್ಥಳೀಯ ಆರೋಗ್ಯ ಕೇಂದ್ರಗಳಿಗೆ ಅಗತ್ಯ ಉಪಕರಣ ಮತ್ತು ಸಿಬ್ಬಂದಿ ಸೌಲಭ್ಯ ಹೆಚ್ಚಳ.',
         },
@@ -222,7 +222,7 @@ const content = {
         {
           icon: 'youth',
           category: 'ಯುವಜನ ಮತ್ತು ಕ್ರೀಡೆ',
-          location: 'ಉಡುಪಿ',
+          location: 'ಕಾಪು',
           title: 'ಕ್ರೀಡಾ ಮೈದಾನ ಹಾಗೂ ಸಮುದಾಯ ಭವನ',
           desc: 'ಯುವಜನರಿಗಾಗಿ ಹೊಸ ಕ್ರೀಡಾ ಮೈದಾನ ಮತ್ತು ಸಮುದಾಯ ಭವನ ನಿರ್ಮಾಣ.',
         },
@@ -240,12 +240,12 @@ const content = {
       suffix: 'ವರದಿ',
     },
     footer: {
-      tagline: 'ಕಾಪು ಮತ್ತು ಉಡುಪಿಯ ಸೇವೆಗೆ ಸಮರ್ಪಿತ.',
+      tagline: 'ಕಾಪುವಿನ ಸೇವೆಗೆ ಸಮರ್ಪಿತ.',
       quickLinks: 'ತ್ವರಿತ ಲಿಂಕ್‌ಗಳು',
       contact: 'ಸಂಪರ್ಕಿಸಿ',
       phone: '+91 XXXXX XXXXX',
       email: 'info@gurmesureshshetty.in',
-      address: 'ಕಾಪು, ಉಡುಪಿ ಜಿಲ್ಲೆ, ಕರ್ನಾಟಕ',
+      address: 'ಕಾಪು, ಕರ್ನಾಟಕ',
       copyright: (year) => `© ${year} ಗುರ್ಮೆ ಸುರೇಶ್ ಶೆಟ್ಟಿ. ಎಲ್ಲಾ ಹಕ್ಕುಗಳನ್ನು ಕಾಯ್ದಿರಿಸಲಾಗಿದೆ.`,
       credit: 'Managed by Yatharth',
     },
@@ -303,17 +303,17 @@ const content = {
       {
         accent: 'Committed to',
         rest: 'Progress.',
-        sub: 'Dedicated to serving Kaup and Udupi.',
+        sub: 'Dedicated to serving Kaup.',
       },
       {
         accent: 'Committed to',
         rest: 'Every Citizen.',
-        sub: 'Serving the development of Udupi district.',
+        sub: 'Serving the development of Kaup.',
       },
       {
         accent: 'Building a',
         rest: 'Bright Future.',
-        sub: 'For the development of Kaup and Udupi.',
+        sub: 'For the development of Kaup.',
       },
     ],
     slogans: [
@@ -335,9 +335,9 @@ const content = {
     ],
     about: {
       kicker: 'About the Leader',
-      role: 'BJP · Kaup, Udupi',
+      role: 'BJP · Kaup',
       body: [
-        "A dedicated people's leader who has worked closely with the people of Kaup and Udupi for years, listening to their concerns and standing with them at every step.",
+        "A dedicated people's leader who has worked closely with the people of Kaup for years, listening to their concerns and standing with them at every step.",
         'Deeply rooted in the community he serves, he believes in transparent, accessible leadership and works tirelessly to bring real progress to the everyday lives of every citizen.',
         'From infrastructure and civic amenities to youth development and community welfare, his focus remains on practical, lasting change — built hand-in-hand with the people of the constituency.',
       ],
@@ -345,7 +345,7 @@ const content = {
     works: {
       kicker: 'Achievements',
       heading: 'Development Works',
-      subtitle: 'A look at major development works completed in Kaup and Udupi.',
+      subtitle: 'A look at major development works completed in Kaup.',
       readMore: 'Read More',
       items: [
         {
@@ -358,7 +358,7 @@ const content = {
         {
           icon: 'water',
           category: 'Drinking Water',
-          location: 'Udupi',
+          location: 'Kaup',
           title: 'Clean Drinking Water Scheme',
           desc: 'Continuous, clean drinking water supply provided to rural areas.',
         },
@@ -372,7 +372,7 @@ const content = {
         {
           icon: 'health',
           category: 'Health',
-          location: 'Udupi',
+          location: 'Kaup',
           title: 'Primary Health Centre Strengthening',
           desc: 'Essential equipment and staffing increased at local health centres.',
         },
@@ -386,7 +386,7 @@ const content = {
         {
           icon: 'youth',
           category: 'Youth & Sports',
-          location: 'Udupi',
+          location: 'Kaup',
           title: 'Sports Ground & Community Hall',
           desc: 'New sports ground and community hall built for the youth.',
         },
@@ -404,12 +404,12 @@ const content = {
       suffix: 'Report',
     },
     footer: {
-      tagline: 'Dedicated to serving Kaup and Udupi.',
+      tagline: 'Dedicated to serving Kaup.',
       quickLinks: 'Quick Links',
       contact: 'Contact',
       phone: '+91 XXXXX XXXXX',
       email: 'info@gurmesureshshetty.in',
-      address: 'Kaup, Udupi District, Karnataka',
+      address: 'Kaup, Karnataka',
       copyright: (year) => `© ${year} Gurme Suresh Shetty. All rights reserved.`,
       credit: 'Managed by Yatharth',
     },
