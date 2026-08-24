@@ -1,6 +1,5 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import bannerImg from './assets/finalbanner.jpg'
-import galleryImg1 from './assets/banner-01.jpg'
 import bannerImgMobile from './assets/mobileview-01.jpg'
 import bjpLogo from './assets/bjp logo.png'
 import modiLogo from './assets/Modi_Circular_Logos.png'
@@ -8,6 +7,19 @@ import hamVideo from './assets/hamvideo.mp4'
 import aboutImg from './assets/about-us-section .png'
 import aboutImg2 from './assets/final02.png'
 import aboutImg3 from './assets/Gurme_Suresh_B&W_Outline_3.png'
+import gallery1 from './assets/gallery/IMG-20220218-WA0004.jpg'
+import gallery2 from './assets/gallery/IMG-20220221-WA0046.jpg'
+import gallery3 from './assets/gallery/IMG-20220221-WA0061.jpg'
+import gallery4 from './assets/gallery/IMG-20220221-WA0087.jpg'
+import gallery5 from './assets/gallery/IMG-20220221-WA0117.jpg'
+import gallery6 from './assets/gallery/IMG-20220826-WA0053.jpg'
+import gallery7 from './assets/gallery/IMG-20220911-WA0003.jpg'
+import gallery8 from './assets/gallery/IMG-20220911-WA0004.jpg'
+import gallery9 from './assets/gallery/IMG-20230227-WA0002.jpg'
+import gallery10 from './assets/gallery/IMG-20230304-WA0010.jpg'
+import gallery11 from './assets/gallery/IMG-20230517-WA0053.jpg'
+import gallery12 from './assets/gallery/IMG-20230529-WA0076.jpg'
+import gallery13 from './assets/gallery/IMG-20230715-WA0026.jpg'
 import './App.css'
 
 const aboutImages = [aboutImg, aboutImg2, aboutImg3]
@@ -34,11 +46,19 @@ const workIcons = {
 }
 
 const galleryImages = [
-  { src: galleryImg1 },
-  { src: null },
-  { src: bannerImg },
-  { src: null },
-  { src: null },
+  { src: gallery1 },
+  { src: gallery2 },
+  { src: gallery3 },
+  { src: gallery4 },
+  { src: gallery5 },
+  { src: gallery6 },
+  { src: gallery7 },
+  { src: gallery8 },
+  { src: gallery9 },
+  { src: gallery10 },
+  { src: gallery11 },
+  { src: gallery12 },
+  { src: gallery13 },
 ]
 
 const reportYears = ['2023', '2024', '2025', '2026']
@@ -61,6 +81,7 @@ const PANCHAYATS_KN = [
   'ಪಲಿಮಾರು',
   'ಕಟಪಾಡಿ',
   'ಬಡ',
+  'ಕಾಪು ಪುರಸಭೆ',
 ]
 const PANCHAYATS_EN = [
   'Kote',
@@ -79,6 +100,7 @@ const PANCHAYATS_EN = [
   'Palimaru',
   'Katapadi',
   'Bada',
+  'Kaup Purasabhe',
 ]
 
 const ISSUE_TYPES_KN = [
