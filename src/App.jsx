@@ -25,23 +25,31 @@ import './App.css'
 const aboutImages = [aboutImg, aboutImg2, aboutImg3]
 
 const workIcons = {
-  road: (
-    <path d="M10 3 4 21m10-18 6 18M9 14h6M10.5 9h3" />
+  grant: (
+    <path d="M3 10h18M5 10v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-9M9 20v-5h6v5M3 10l2.5-6h13L21 10" />
   ),
-  water: (
-    <path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11Z" />
+}
+
+const newsIcons = {
+  clipping: (
+    <>
+      <path d="M5 4h11a2 2 0 0 1 2 2v12.5a1.5 1.5 0 0 0 1.5 1.5H7a2 2 0 0 1-2-2V4Z" />
+      <path d="M18 8h1.5A1.5 1.5 0 0 1 21 9.5V18a2 2 0 0 1-2 2" />
+      <path d="M8 8h6M8 11.5h6M8 15h3.5" />
+    </>
   ),
-  education: (
-    <path d="m12 4 9 4-9 4-9-4 9-4Zm-6 6v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5" />
+  interview: (
+    <>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M10 8.7v6.6l5.5-3.3-5.5-3.3Z" fill="currentColor" stroke="none" />
+    </>
   ),
-  health: (
-    <path d="M12 21s-7-4.4-9.5-9C.6 8.3 2.4 5 5.6 5c1.9 0 3.3 1 4.4 2.5C11.1 6 12.5 5 14.4 5 17.6 5 19.4 8.3 21.5 12 19 16.6 12 21 12 21Z" />
-  ),
-  infra: (
-    <path d="m13 2-9 12h6l-1 8 9-12h-6l1-8Z" />
-  ),
-  youth: (
-    <path d="M8 21h8M12 17v4M6 4h12v4a6 6 0 0 1-12 0V4ZM6 6H3a3 3 0 0 0 3 5M18 6h3a3 3 0 0 1-3 5" />
+  social: (
+    <>
+      <rect x="3" y="3" width="18" height="18" rx="6" />
+      <circle cx="12" cy="12" r="4.2" />
+      <circle cx="17" cy="7" r="1.1" fill="currentColor" stroke="none" />
+    </>
   ),
 }
 
@@ -60,8 +68,6 @@ const galleryImages = [
   { src: gallery12 },
   { src: gallery13 },
 ]
-
-const reportYears = ['2023', '2024', '2025', '2026']
 
 // Canonical (Kannada) values — always what gets stored/sent, regardless of display language
 const PANCHAYATS_KN = [
@@ -153,7 +159,6 @@ const content = {
       { id: 'about', label: 'ನಾಯಕರ ಬಗ್ಗೆ' },
       { id: 'works', label: 'ಸಾಧನೆಗಳು' },
       { id: 'gallery', label: 'ಗ್ಯಾಲರಿ' },
-      { id: 'report-card', label: 'ವರದಿ ಪತ್ರ' },
       { id: 'news', label: 'ಸುದ್ದಿ' },
       { id: 'contact', label: 'ಸಂಪರ್ಕ' },
     ],
@@ -205,61 +210,164 @@ const content = {
       heading: 'ಅಭಿವೃದ್ಧಿ ಕಾರ್ಯಗಳು',
       subtitle: 'ಕಾಪುವಿನಲ್ಲಿ ಪೂರ್ಣಗೊಂಡ ಪ್ರಮುಖ ಅಭಿವೃದ್ಧಿ ಕಾರ್ಯಗಳ ಒಂದು ನೋಟ.',
       readMore: 'ಇನ್ನಷ್ಟು ಓದಿ',
-      items: [
-        {
-          icon: 'road',
-          category: 'ರಸ್ತೆ ಅಭಿವೃದ್ಧಿ',
-          location: 'ಕಾಪು',
-          title: 'ಪ್ರಮುಖ ರಸ್ತೆಗಳ ಡಾಂಬರೀಕರಣ',
-          desc: 'ಕಾಪಿನ ಪ್ರಮುಖ ಸಂಪರ್ಕ ರಸ್ತೆಗಳ ವಿಸ್ತರಣೆ ಮತ್ತು ಡಾಂಬರೀಕರಣ ಕಾಮಗಾರಿ ಪೂರ್ಣ.',
-        },
-        {
-          icon: 'water',
-          category: 'ಕುಡಿಯುವ ನೀರು',
-          location: 'ಕಾಪು',
-          title: 'ಶುದ್ಧ ಕುಡಿಯುವ ನೀರಿನ ಯೋಜನೆ',
-          desc: 'ಗ್ರಾಮೀಣ ಪ್ರದೇಶಗಳಿಗೆ ನಿರಂತರ, ಶುದ್ಧ ಕುಡಿಯುವ ನೀರಿನ ಸೌಲಭ್ಯ ಒದಗಿಸಲಾಗಿದೆ.',
-        },
-        {
-          icon: 'education',
-          category: 'ಶಿಕ್ಷಣ',
-          location: 'ಕಾಪು',
-          title: 'ಸರ್ಕಾರಿ ಶಾಲಾ ಮೂಲಸೌಕರ್ಯ',
-          desc: 'ಸರ್ಕಾರಿ ಶಾಲೆಗಳಲ್ಲಿ ಹೊಸ ಕೊಠಡಿ, ಪೀಠೋಪಕರಣ ಹಾಗೂ ಡಿಜಿಟಲ್ ಸೌಲಭ್ಯ ಒದಗಿಸಲಾಗಿದೆ.',
-        },
-        {
-          icon: 'health',
-          category: 'ಆರೋಗ್ಯ',
-          location: 'ಕಾಪು',
-          title: 'ಪ್ರಾಥಮಿಕ ಆರೋಗ್ಯ ಕೇಂದ್ರ ಬಲವರ್ಧನೆ',
-          desc: 'ಸ್ಥಳೀಯ ಆರೋಗ್ಯ ಕೇಂದ್ರಗಳಿಗೆ ಅಗತ್ಯ ಉಪಕರಣ ಮತ್ತು ಸಿಬ್ಬಂದಿ ಸೌಲಭ್ಯ ಹೆಚ್ಚಳ.',
-        },
-        {
-          icon: 'infra',
-          category: 'ಮೂಲಸೌಕರ್ಯ',
-          location: 'ಕಾಪು',
-          title: 'ವಿದ್ಯುತ್ ಮತ್ತು ಒಳಚರಂಡಿ ಸುಧಾರಣೆ',
-          desc: 'ವಿದ್ಯುತ್ ಪೂರೈಕೆ ಮತ್ತು ಒಳಚರಂಡಿ ವ್ಯವಸ್ಥೆಯ ಆಧುನೀಕರಣ ಕಾಮಗಾರಿ.',
-        },
-        {
-          icon: 'youth',
-          category: 'ಯುವಜನ ಮತ್ತು ಕ್ರೀಡೆ',
-          location: 'ಕಾಪು',
-          title: 'ಕ್ರೀಡಾ ಮೈದಾನ ಹಾಗೂ ಸಮುದಾಯ ಭವನ',
-          desc: 'ಯುವಜನರಿಗಾಗಿ ಹೊಸ ಕ್ರೀಡಾ ಮೈದಾನ ಮತ್ತು ಸಮುದಾಯ ಭವನ ನಿರ್ಮಾಣ.',
-        },
-      ],
+      relatedFunds: 'ಸಂಬಂಧಿತ ಅನುದಾನ ವಿವರ',
+      grantsCategory: 'ಅನುದಾನ ವಿವರ',
+      grantsDesc: 'ಈ ಇಲಾಖೆಯಡಿ ಕಾಪು ವಿಧಾನ ಸಭಾ ಕ್ಷೇತ್ರಕ್ಕೆ ಮಂಜೂರಾದ ಅನುದಾನದ ಸಂಪೂರ್ಣ ವಿವರಕ್ಕಾಗಿ ಕ್ಲಿಕ್ ಮಾಡಿ.',
     },
     gallery: {
       kicker: 'ಗ್ಯಾಲರಿ',
       heading: 'ಫೋಟೋ ಗ್ಯಾಲರಿ',
       subtitle: 'ಕ್ಷೇತ್ರದ ಕಾರ್ಯಕ್ರಮಗಳು ಮತ್ತು ಭೇಟಿಗಳ ಕೆಲವು ಕ್ಷಣಗಳು.',
     },
-    report: {
-      kicker: 'ವರದಿ ಪತ್ರ',
-      heading: 'ರಿಪೋರ್ಟ್ ಕಾರ್ಡ್',
-      subtitle: 'ವರ್ಷವಾರು ಅಭಿವೃದ್ಧಿ ವರದಿಗಳನ್ನು ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ.',
-      suffix: 'ವರದಿ',
+    funds: {
+      categories: [
+        {
+          title: 'ಲೋಕೋಪಯೋಗಿ ಇಲಾಖೆ',
+          items: [
+            'ರಾಜ್ಯ ಹೆದ್ದಾರಿ ಹಾಗೂ ಜಿಲ್ಲಾ ರಸ್ತೆಗಳ ಅಭಿವೃದ್ಧಿ, ಸೇತುವೆಗಳ ನಿರ್ಮಾಣಕ್ಕೆ 1832.67 ಲಕ್ಷ (18.32 ಕೋಟಿ) ಅನುದಾನ ಬಿಡುಗಡೆ ಆಗಿರುತ್ತದೆ.',
+            'ಕಿರು ಸೇತುವೆ ಮತ್ತು ಕಾಲು ಸಂಕಗಳಿಗೆ 185.00 ಲಕ್ಷ (1.85 ಕೋಟಿ) ಅನುದಾನ ಬಿಡುಗಡೆ.',
+            'ಸಿ.ಆರ್.ಐ.ಎಫ್ ಅನುದಾನದಲ್ಲಿ ರೂ 600.00 ಲಕ್ಷ (6.00 ಕೋಟಿ) ಅನುದಾನ ಬಿಡುಗಡೆಗೊಂಡಿರುತ್ತದೆ.',
+            '2025-26ನೇ ಸಾಲಿನ ಮುಖ್ಯ ಮಂತ್ರಿ ಮೂಲ ಭೂತ ಸೌಕರ್ಯ ಯೋಜನೆಯಡಿ 3.00 ಕೋಟಿ ಅನುದಾನ ಮಂಜೂರು.',
+          ],
+        },
+        {
+          title: '2023-24 ರಿಂದ 2026-27ರವರೆಗೆ ಶಾಸಕರ ಸ್ಥಳೀಯ ಪ್ರದೇಶಾಭಿವೃದ್ಧಿ ನಿಧಿ',
+          items: [
+            '2023-24ನೇ ಸಾಲಿನ ಶಾಸಕರ ಸ್ಥಳೀಯ ಪ್ರದೇಶಾಭಿವೃದ್ಧಿ ನಿಧಿ ಯೋಜನೆಯಲ್ಲಿ 200 ಲಕ್ಷ ಅನುದಾನ.',
+            '2024-25ನೇ ಸಾಲಿನ ಶಾಸಕರ ಸ್ಥಳೀಯ ಪ್ರದೇಶಾಭಿವೃದ್ಧಿ ನಿಧಿ ಯೋಜನೆಯಲ್ಲಿ 200 ಲಕ್ಷ ಅನುದಾನ.',
+            '2025-26ನೇ ಸಾಲಿನ ಶಾಸಕರ ಸ್ಥಳೀಯ ಪ್ರದೇಶಾಭಿವೃದ್ಧಿ ನಿಧಿ ಯೋಜನೆಯಲ್ಲಿ 200 ಲಕ್ಷ ಅನುದಾನ.',
+            '2026-27ನೇ ಸಾಲಿನಲ್ಲಿ ರೂ 50.00 ಲಕ್ಷ ಅನುದಾನ ಬಿಡುಗಡೆ ಆಗಿರುತ್ತದೆ.',
+          ],
+        },
+        {
+          title: 'ಗ್ರಾಮೀಣಾಭಿವೃದ್ಧಿ ಪಂಚಾಯತ್ ರಾಜ್ ಇಲಾಖೆ',
+          items: [
+            '2024-25ನೇ ಸಾಲಿನಲ್ಲಿ ಲೆಕ್ಕ ಶೀರ್ಷಿಕೆ 5054 ರಡಿಯಲ್ಲಿ ಗ್ರಾಮೀಣ ರಸ್ತೆಗಳ ಅಭಿವೃದ್ಧಿಗೆ ರೂ 10 ಕೋಟಿ ಅನುದಾನ ಮಂಜೂರು.',
+            'ಗ್ರಾಮೀಣ ರಸ್ತೆಗಳ ಪ್ರಗತಿ ಪಥ ಯೋಜನೆಯಡಿ 16.04 ಕೋಟಿ ಅನುದಾನ ಮಂಜೂರು.',
+            '2025-26ನೇ ಸಾಲಿನ ಲೆಕ್ಕ ಶೀರ್ಷಿಕೆ 5054 ರಡಿ ಗ್ರಾಮೀಣ ರಸ್ತೆಗಳ ಅಭಿವೃದ್ಧಿಗೆ 9.40 ಕೋಟಿ ಅನುದಾನ ಮಂಜೂರು.',
+            '2025-26ನೇ ಸಾಲಿನ ಮುಖ್ಯ ಮಂತ್ರಿ ಮೂಲ ಭೂತ ಸೌಕರ್ಯ ಕಾಮಗಾರಿಯಡಿ 15.75 ಕೋಟಿ ಗ್ರಾಮೀಣ ರಸ್ತೆಗಳಿಗೆ ಅನುದಾನ ಮಂಜೂರು.',
+            '2026-27ನೇ ಸಾಲಿನ ಲೆಕ್ಕ ಶೀರ್ಷಿಕೆ 3054 ಮುಖ್ಯಮಂತ್ರಿಗಳ ಗ್ರಾಮೀಣ ರಸ್ತೆಗಳ ನಿರ್ವಹಣೆಯಲ್ಲಿ 94.54 ಲಕ್ಷ ಅನುದಾನ ಮಂಜೂರಾಗಿರುತ್ತದೆ.',
+          ],
+        },
+        {
+          title: 'ಅಲ್ಪಸಂಖ್ಯಾತ ಕಲ್ಯಾಣ ಇಲಾಖೆ',
+          items: [
+            'ಅಲ್ಪಸಂಖ್ಯಾತರ ಕಾಲನಿಗಳ ಸಮಗ್ರ ಅಭಿವೃದ್ಧಿಗೆ ರೂ 3.00 ಕೋಟಿ ಅನುದಾನ ಮಂಜೂರು.',
+          ],
+        },
+        {
+          title: 'ಮೀನುಗಾರಿಕಾ, ಬಂದರು ಮತ್ತು ಒಳನಾಡು ಜಲಸಾರಿಗೆ ಇಲಾಖೆ',
+          items: [
+            'ಪಡುಬಿದ್ರೆ, ಹೆಜಮಾಡಿ, ನಡಿಪಟ್ಟ ಇಲ್ಲಿನ ಸಮುದ್ರ ಕೊರತ ತಡೆಗೋಡೆ ಸಂರಕ್ಷಣೆಗೆ 2023-24ನೇ ಸಾಲಿನಲ್ಲಿ 450 ಲಕ್ಷ ಅನುದಾನ ಬಿಡುಗಡೆ.',
+            '2024-25ನೇ ಸಾಲಿನಲ್ಲಿ 118.77 ಲಕ್ಷ ಅನುದಾನ ಬಿಡುಗಡೆಗೊಂಡಿರುತ್ತದೆ.',
+            '2024-25ನೇ ಸಾಲಿನಲ್ಲಿ ಮೀನುಗಾರಿಕಾ ಕೊಂಡಿ ರಸ್ತೆಗಳಿಗೆ 100 ಲಕ್ಷ ಅನುದಾನ ಬಿಡುಗಡೆಗೊಂಡಿರುತ್ತದೆ.',
+          ],
+        },
+        {
+          title: 'ಸಮಾಜ ಕಲ್ಯಾಣ ಇಲಾಖೆ — ಪ.ಜಾತಿ ಕಾಲನಿಗಳ ರಸ್ತೆಗಳ ಅಭಿವೃದ್ಧಿ',
+          items: [
+            '2024-25ನೇ ಸಾಲಿನಲ್ಲಿ 400.00 ಲಕ್ಷ ಅನುದಾನ ಪ.ಜಾತಿ ಕಾಲನಿಗಳ ಅಭಿವೃದ್ಧಿಗೆ ಬಿಡುಗಡೆಗೊಂಡಿರುತ್ತದೆ.',
+            '2025-26ನೇ ಸಾಲಿನಲ್ಲಿ 350.00 ಲಕ್ಷ ಅನುದಾನ ಪ.ಜಾತಿ ಕಾಲನಿಗಳ ಅಭಿವೃದ್ಧಿಗೆ ಬಿಡುಗಡೆಗೊಂಡಿರುತ್ತದೆ.',
+          ],
+        },
+        {
+          title: 'ಧಾರ್ಮಿಕ ದತ್ತಿ ಹಾಗೂ ಮುಜರಾಯಿ ಇಲಾಖೆ',
+          items: [
+            'ಕಾಪು ವಿಧಾನಸಭಾ ಕ್ಷೇತ್ರದ ವಿವಿಧ ಪ್ರಾರ್ಥನಾ ಮಂದಿರಗಳಿಗೆ 2024-25ನೇ ಸಾಲಿನಲ್ಲಿ 30.00 ಲಕ್ಷ ಅನುದಾನ ಬಿಡುಗಡೆಗೊಂಡಿರುತ್ತದೆ.',
+            '2025-26ನೇ ಸಾಲಿನ ಮುಖ್ಯ ಮಂತ್ರಿಗಳ ಮೂಲ ಸೌಕರ್ಯ ಅಭಿವೃದ್ಧಿ ಅನುದಾನ ಯೋಜನೆಯಡಿ ಪ್ರಾರ್ಥನಾ ಮಂದಿರದ ಅಭಿವೃದ್ಧಿ ಹಾಗೂ ಸಮುದಾಯ ಭವನ ಕಾಮಗಾರಿಗೆ ರೂ 625.00 ಲಕ್ಷ ಅನುದಾನ ಬಿಡುಗಡೆಗೊಂಡಿರುತ್ತದೆ.',
+          ],
+        },
+        {
+          title: 'ಸಣ್ಣ ನೀರಾವರಿ ಹಾಗೂ ಅಂತರ್ಜಲ ಅಭಿವೃದ್ಧಿ ಇಲಾಖೆ — ನದಿದಂಡೆಗಳ ಸಂರಕ್ಷಣೆ',
+          items: [
+            'ಕಟಪಾಡಿ ಗ್ರಾ.ಪಂ ವ್ಯಾಪ್ತಿಯ ಮೂಡುಬೆಟ್ಟು ಗ್ರಾಮ ಕಟ್ಟೀಕೆರೆ ಕೆರೆ ಅಭಿವೃದ್ಧಿ ಕಾಮಗಾರಿಗೆ 150.00 ಲಕ್ಷ ಅನುದಾನ ಮಂಜೂರಾಗಿರುತ್ತದೆ.',
+            'ಕಾಪು ತಾಲೂಕು ತೆಂಕ ಮತ್ತು ಕಾಮಿನಿ ನದಿಯ ಮಧ್ಯ ಹರಿಯುವ ಕಾಮಿನಿ ಹೊಳೆಯ ಹೂಳೆತ್ತಿ ಮತ್ತು ಆಯ್ದ ಭಾಗಗಳಲ್ಲಿ ನದಿ ದಂಡೆ ಸಂರಕ್ಷಣಾ ಕಾಮಗಾರಿಗೆ 200 ಲಕ್ಷ ಅನುದಾನ ಮಂಜೂರಾಗಿರುತ್ತದೆ.',
+            'ಬೈರಂಪಳ್ಳಿ, ಮಣಿಪುರ, ಕಟಪಾಡಿ ಭಾಗಗಳಲ್ಲಿ ನದಿ ದಂಡೆ ಸಂರಕ್ಷಣಾ ಕಾಮಗಾರಿಗೆ 90.00 ಲಕ್ಷ ಅನುದಾನ ಮಂಜೂರಾಗಿರುತ್ತದೆ.',
+            'ಬಡಗುಬೆಟ್ಟು ಗ್ರಾಮ ಪಂಚಾಯತ್ ವ್ಯಾಪ್ತಿಯ ನಲ್ಲೂರು ಬೊಮ್ಮು ಪೂಜಾರಿ ಮನೆ ಬಳಿ ಬೈಲು ತೋಡಿಗೆ ಕಿಂಡಿ ಆಣೆಕಟ್ಟು ನಿರ್ಮಾಣ ಕಾಮಗಾರಿಗೆ 73.00 ಲಕ್ಷ ಅನುದಾನ ಬಿಡುಗಡೆ.',
+            'ಎಲ್ಲೂರು ಶ್ರೀ ವಿಶ್ವೇಶ್ವರ ದೇವಸ್ಥಾನದ ಉಪಸಾನಿಧ್ಯವಾದ ವೀರಾಂಜನೇಯ ಗುಡಿಯ ಸಮೀಪದ ಕೆರೆ ಅಭಿವೃದ್ಧಿ ಕಾಮಗಾರಿಗೆ ರೂ 200.00 ಲಕ್ಷ ಅನುದಾನ ಬಿಡುಗಡೆ.',
+            'ಉಚ್ಚಿಲ ಶ್ರೀ ಮಹಾಲಿಂಗೇಶ್ವರ ಮಹಾಗಣಪತಿ ದೇವಸ್ಥಾನದ ಪಡು ಬದಿ ತಡೆಗೋಡೆ ನಿರ್ಮಾಣ ಕಾಮಗಾರಿಗೆ 50.00 ಲಕ್ಷ ಅನುದಾನ ಬಿಡುಗಡೆ.',
+            'ಬಡಾ ಗ್ರಾಮದ 6ನೇ ವಾರ್ಡಿನ ಶ್ರೀ ರಾಮ ಮಂದಿರ ಎಮ್ಮಾಳ್ ಜ್ಯೂನಿಯರ್ ಕಾಲೇಜಿನ ತೋಡಿಗೆ 2 ಬದಿ ತಡೆಗೋಡೆ ನಿರ್ಮಾಣ ಕಾಮಗಾರಿಗೆ ರೂ 25.00 ಲಕ್ಷ ಬಿಡುಗಡೆ.',
+            'ಉದ್ಯಾವರ ಕೊಪ್ಪಳ ಇಲ್ಲಿನ ರಾಮ ಭಜನಾ ಮಂದಿರದ ಮೂಡು ಬದಿಯಲ್ಲಿ ಮಳೆಯಿಂದ ಕೊರೆತಕ್ಕೊಳಗಾದ ಭಾಗದಲ್ಲಿ ತಡೆಗೋಡೆ ನಿರ್ಮಾಣ ಕಾಮಗಾರಿಗೆ ರೂ 50.00 ಲಕ್ಷ ಅನುದಾನ ಮಂಜೂರು.',
+          ],
+        },
+        {
+          title: 'ಆರೋಗ್ಯ ಇಲಾಖೆ',
+          items: [
+            'ಕೊಡಿಬೆಟ್ಟು ಗ್ರಾ.ಪಂ ವ್ಯಾಪ್ತಿಯ ಕುದಿ ಗ್ರಾಮದ ಅಂಗಾರಕಟ್ಟೆ ಇಲ್ಲಿ ಆರೋಗ್ಯ ಮತ್ತು ಕ್ಷೇಮ ಕೇಂದ್ರ ಕಟ್ಟಡ ನಿರ್ಮಾಣಕ್ಕೆ 65.00 ಲಕ್ಷ ಅನುದಾನ ಮಂಜೂರು.',
+            'ಬೆಳ್ವಾಡಿ ಎಂಬಲ್ಲಿ ಆರೋಗ್ಯ ಮತ್ತು ಕ್ಷೇಮ ಕೇಂದ್ರ ಕಟ್ಟಡ ನಿರ್ಮಾಣಕ್ಕೆ 65.00 ಲಕ್ಷ ಅನುದಾನ ಮಂಜೂರು.',
+            'ಎಲ್ಲೂರು ಗ್ರಾ.ಪಂ ವ್ಯಾಪ್ತಿಯಲ್ಲಿ ಆರೋಗ್ಯ ಮತ್ತು ಕ್ಷೇಮ ಕಟ್ಟಡ ನಿರ್ಮಾಣಕ್ಕೆ ರೂ 65.00 ಲಕ್ಷ ಮಂಜೂರು.',
+            'ಪಡುಬಿದ್ರೆ ಪ್ರಾಥಮಿಕ ಆರೋಗ್ಯ ಕೇಂದ್ರದಲ್ಲಿ ಶೀತಲೀಕೃತ ಶವಗಾರ ನಿರ್ಮಾಣಕ್ಕೆ (ಎಂ.ಆರ್.ಪಿ.ಎಲ್) 8.00 ಲಕ್ಷ ಅನುದಾನ.',
+            'ಕಾಪು ಪ್ರಾಥಮಿಕ ಆರೋಗ್ಯ ಕೇಂದ್ರದಲ್ಲಿ ಶೀತಲೀಕೃತ ಶವಗಾರ ನಿರ್ಮಾಣಕ್ಕೆ 18.50 ಲಕ್ಷ ಅನುದಾನ.',
+            'ಶಿರ್ವ ಸಮುದಾಯ ಆರೋಗ್ಯ ಕೇಂದ್ರ ಕಟ್ಟಡದ ದುರಸ್ತಿ ಕಾಮಗಾರಿಗೆ ರೂ 10.00 ಲಕ್ಷ ಅನುದಾನ.',
+            'ಕಾಪು ಪ್ರಾಥಮಿಕ ಆರೋಗ್ಯ ಕೇಂದ್ರದ ಉನ್ನತೀಕರಣ ಕಾಮಗಾರಿಗೆ 20.00 ಲಕ್ಷ ಅನುದಾನ.',
+            'ಕುತ್ಯಾರು ಎಂಬಲ್ಲಿ ಆರೋಗ್ಯ ಮತ್ತು ಕ್ಷೇಮ ಕೇಂದ್ರ ಕಟ್ಟಡ ನಿರ್ಮಾಣಕ್ಕೆ 65.00 ಲಕ್ಷ ಅನುದಾನ ಮಂಜೂರು.',
+            'ಬೈರಂಪಳ್ಳಿ ಶಿರೂರು 41ರಲ್ಲಿ ಆರೋಗ್ಯ ಮತ್ತು ಕ್ಷೇಮ ಕೇಂದ್ರ ಕಟ್ಟಡ ನಿರ್ಮಾಣಕ್ಕೆ 65.00 ಲಕ್ಷ ಅನುದಾನ ಮಂಜೂರು.',
+            'ಕಾಪು ಪ್ರಾಥಮಿಕ ಆರೋಗ್ಯ ಕೇಂದ್ರವನ್ನು ಬ್ಲಾಕ್ ಆರೋಗ್ಯ ಕೇಂದ್ರವಾಗಿ ಮೇಲ್ದರ್ಜೆಗೇರಿಸಿ ಕಟ್ಟಡ ನಿರ್ಮಾಣಕ್ಕೆ 5.75 ಕೋಟಿ ಅನುದಾನ.',
+            'ಹೆರೂರು ಎಂಬಲ್ಲಿ ಆರೋಗ್ಯ ಮತ್ತು ಕ್ಷೇಮ ಕೇಂದ್ರ ಕಟ್ಟಡ ನಿರ್ಮಾಣಕ್ಕೆ 65.00 ಲಕ್ಷ ಅನುದಾನ ಮಂಜೂರು.',
+          ],
+        },
+        {
+          title: 'ಪಶು ಸಂಗೋಪನೆ ಮತ್ತು ಇತರೆ ಇಲಾಖೆಗಳು',
+          items: [
+            'ಎಲ್ಲೂರು ಗ್ರಾ.ಪಂ ವ್ಯಾಪ್ತಿಯ ಗೋ ರುದ್ರ ಭೂಮಿ ಕಟ್ಟಡ ನಿರ್ಮಾಣಕ್ಕೆ ರೂ 50.00 ಲಕ್ಷ ಅನುದಾನ ಮಂಜೂರು.',
+            'ಎಲ್ಲೂರು ಗ್ರಾ.ಪಂ ವ್ಯಾಪ್ತಿಯ ಗೋ ಶಾಲೆಯ ಸಮೀಪ ಉಗ್ರಾಣ ನಿರ್ಮಾಣಕ್ಕೆ ರೂ 17.00 ಲಕ್ಷ ಅನುದಾನ ಮಂಜೂರು.',
+            'ಕೋಟೆ ಕಟಪಾಡಿ ಪಶು ಚಿಕಿತ್ಸಾಲಯ ನಿರ್ಮಾಣ ಕಾಮಗಾರಿಗೆ 49.98 ಲಕ್ಷ ಅನುದಾನ ಬಿಡುಗಡೆ.',
+            'ಪಿ.ಎಂ. ಜನ್ ಮನ್ ಯೋಜನೆಯಡಿ ಎಂ.ಪಿ.ಸಿ ಕೇಂದ್ರ ಕಟ್ಟಡ ನಿರ್ಮಾಣಕ್ಕೆ ಐ.ಟಿ.ಡಿ.ಪಿ ಇಲಾಖೆಗೆ ರೂ 60.00 ಲಕ್ಷ ಅನುದಾನ ಮಂಜೂರು.',
+            'ಹೆಜಮಾಡಿ ಬಳಿ ಕೆ.ಸೇಫ್-2 ಯೋಜನೆಯಡಿ ಅಗ್ನಿ ಶಾಮಕ ಕಟ್ಟಡ ನಿರ್ಮಾಣ ಕಾಮಗಾರಿಗೆ ರೂ 2.33 ಕೋಟಿ ಅನುದಾನ ಬಿಡುಗಡೆ.',
+            'ಕಾಪು ಹೆಜಮಾಡಿ ಬಂದರು ನಿರ್ಮಾಣ ಕಾಮಗಾರಿಗೆ 2023-24ರಿಂದ 2025-26ರವರೆಗೆ ರೂ 103.77 ಕೋಟಿ ಅನುದಾನ ಮಂಜೂರು.',
+            '2025-26ನೇ ಸಾಲಿನ ಕರಾವಳಿ ಅಭಿವೃದ್ಧಿ ಪ್ರಾಧಿಕಾರ ಯೋಜನೆಯಡಿ ರೂ 35.00 ಲಕ್ಷ ಅನುದಾನ ಮಂಜೂರು.',
+            '2026-27ನೇ ಸಾಲಿನ ಕರಾವಳಿ ಅಭಿವೃದ್ಧಿ ಪ್ರಾಧಿಕಾರ ಯೋಜನೆಯಡಿ ರೂ 25.00 ಲಕ್ಷ ಅನುದಾನ ಮಂಜೂರು.',
+          ],
+        },
+      ],
+    },
+    news: {
+      kicker: 'ಸುದ್ದಿ',
+      heading: 'ಪತ್ರಿಕಾ ವರದಿಗಳು ಮತ್ತು ಸಂದರ್ಶನಗಳು',
+      subtitle:
+        'ಶಾಸಕ ಗುರ್ಮೆ ಸುರೇಶ್ ಶೆಟ್ಟಿ ಅವರ ಇತ್ತೀಚಿನ ಪತ್ರಿಕಾ ವರದಿಗಳು ಮತ್ತು ಸಂದರ್ಶನಗಳ ಸಂಗ್ರಹ.',
+      clippingLabel: 'ಪತ್ರಿಕಾ ವರದಿ',
+      interviewLabel: 'ಸಂದರ್ಶನ',
+      socialLabel: 'ಇನ್‌ಸ್ಟಾಗ್ರಾಂ ಪೋಸ್ಟ್',
+      linkLabel: 'ಪೂರ್ಣ ವರದಿ ನೋಡಿ',
+      prevLabel: 'ಹಿಂದಿನದು',
+      nextLabel: 'ಮುಂದಿನದು',
+      items: [
+        {
+          type: 'interview',
+          title:
+            "'ಹೋಟೆಲ್ ಕೆಲ್ಸ 30 ವರ್ಷ ಬಳ್ಳಾರಿ ಬದುಕು' ಕರಾವಳಿಗರ ಪ್ರೀತಿಗೆ ಬಿಜೆಪಿ ಶಾಸಕ ಭಾವುಕ ಮಾತು!",
+          source: 'ವಿಶ್ವವಾಣಿ ಟಿವಿ',
+          date: '',
+          link: 'https://www.youtube.com/watch?v=0TauEYTnsOs',
+          image: 'https://img.youtube.com/vi/0TauEYTnsOs/hqdefault.jpg',
+        },
+        {
+          type: 'interview',
+          title:
+            "ಶಾಸಕ ಗುರ್ಮೆ ಮಾತು ಕಡಿಮೆ, ಕೆಲ್ಸ ಜಾಸ್ತಿ 'ಕೈ' ಕೆಣಕಿ ಬಿಜೆಪಿಗೆ ಜೈ ಎಂದ ಕಾಪು ಜನ!",
+          source: 'ಗುರ್ಮೆ ಸುರೇಶ್ ಶೆಟ್ಟಿ',
+          date: '',
+          link: 'https://www.youtube.com/watch?v=dDKLPZ-IMIA',
+          image: 'https://img.youtube.com/vi/dDKLPZ-IMIA/hqdefault.jpg',
+        },
+        {
+          type: 'interview',
+          title: 'ಅಧ್ಯಕ್ಷರೇ ನೀವು ತಾಯಿ ಸ್ಥಾನದಲ್ಲಿದ್ದೀರಿ, ಎಲ್ಲರ ಸಮಸ್ಯೆ ಕೇಳಿ.',
+          source: 'ಗುರ್ಮೆ ಸುರೇಶ್ ಶೆಟ್ಟಿ',
+          date: '',
+          link: 'https://youtu.be/mkbXNYpvvoM',
+          image: 'https://img.youtube.com/vi/mkbXNYpvvoM/hqdefault.jpg',
+        },
+        {
+          type: 'interview',
+          title: 'ಸನ್ಮಾನ್ಯ ಅಧ್ಯಕ್ಷರೇ..! ನೀವು ಗಟ್ಟಿ ಮನಸ್ಸು ಮಾಡಬೇಕು',
+          source: 'ಉದಯವಾಣಿ',
+          date: '',
+          link: 'https://www.youtube.com/watch?v=xElp9HVfgXk',
+          image: 'https://img.youtube.com/vi/xElp9HVfgXk/hqdefault.jpg',
+        },
+      ],
     },
     footer: {
       tagline: 'ಕಾಪುವಿನ ಸೇವೆಗೆ ಸಮರ್ಪಿತ.',
@@ -317,7 +425,6 @@ const content = {
       { id: 'about', label: 'About' },
       { id: 'works', label: 'Works' },
       { id: 'gallery', label: 'Gallery' },
-      { id: 'report-card', label: 'Report Card' },
       { id: 'news', label: 'News' },
       { id: 'contact', label: 'Contact' },
     ],
@@ -361,7 +468,7 @@ const content = {
       body: [
         "A dedicated people's leader who has worked closely with the people of Kaup for years, listening to their concerns and standing with them at every step.",
         'Deeply rooted in the community he serves, he believes in transparent, accessible leadership and works tirelessly to bring real progress to the everyday lives of every citizen.',
-        'From infrastructure and civic amenities to youth development and community welfare, his focus remains on practical, lasting change — built hand-in-hand with the people of the constituency.',
+        'From infrastructure and civic amenities to youth development and community welfare, his focus remains on practical, lasting change built hand-in-hand with the people of the constituency.',
       ],
     },
     works: {
@@ -369,61 +476,166 @@ const content = {
       heading: 'Development Works',
       subtitle: 'A look at major development works completed in Kaup.',
       readMore: 'Read More',
-      items: [
-        {
-          icon: 'road',
-          category: 'Road Development',
-          location: 'Kaup',
-          title: 'Major Road Asphalting',
-          desc: 'Widening and asphalting of key connecting roads in Kaup completed.',
-        },
-        {
-          icon: 'water',
-          category: 'Drinking Water',
-          location: 'Kaup',
-          title: 'Clean Drinking Water Scheme',
-          desc: 'Continuous, clean drinking water supply provided to rural areas.',
-        },
-        {
-          icon: 'education',
-          category: 'Education',
-          location: 'Kaup',
-          title: 'Government School Infrastructure',
-          desc: 'New classrooms, furniture, and digital facilities provided in government schools.',
-        },
-        {
-          icon: 'health',
-          category: 'Health',
-          location: 'Kaup',
-          title: 'Primary Health Centre Strengthening',
-          desc: 'Essential equipment and staffing increased at local health centres.',
-        },
-        {
-          icon: 'infra',
-          category: 'Infrastructure',
-          location: 'Kaup',
-          title: 'Electricity and Drainage Improvement',
-          desc: 'Modernization of power supply and drainage systems.',
-        },
-        {
-          icon: 'youth',
-          category: 'Youth & Sports',
-          location: 'Kaup',
-          title: 'Sports Ground & Community Hall',
-          desc: 'New sports ground and community hall built for the youth.',
-        },
-      ],
+      relatedFunds: 'Related Grants & Funds',
+      grantsCategory: 'Grants & Funds',
+      grantsDesc:
+        'Click to view the full list of grants sanctioned for this department in Kaup Assembly Constituency.',
     },
     gallery: {
       kicker: 'Gallery',
       heading: 'Photo Gallery',
       subtitle: 'Moments from constituency programs and visits.',
     },
-    report: {
-      kicker: 'Report Card',
-      heading: 'Report Card',
-      subtitle: 'Download year-wise development reports.',
-      suffix: 'Report',
+    funds: {
+      categories: [
+        {
+          title: 'Public Works Department',
+          items: [
+            'Rs. 1832.67 lakh (Rs. 18.32 crore) released for development of state highways and district roads, and bridge construction.',
+            'Rs. 185.00 lakh (Rs. 1.85 crore) released for small bridges and footbridges.',
+            'Rs. 600.00 lakh (Rs. 6.00 crore) released under the CRIF grant.',
+            'Rs. 3.00 crore sanctioned under the 2025-26 CM’s Basic Infrastructure Scheme.',
+          ],
+        },
+        {
+          title: 'MLA Local Area Development Fund, 2023-24 to 2026-27',
+          items: [
+            'Rs. 200 lakh sanctioned under the MLA Local Area Development Fund for 2023-24.',
+            'Rs. 200 lakh sanctioned under the MLA Local Area Development Fund for 2024-25.',
+            'Rs. 200 lakh sanctioned under the MLA Local Area Development Fund for 2025-26.',
+            'Rs. 50.00 lakh released in 2026-27.',
+          ],
+        },
+        {
+          title: 'Rural Development & Panchayat Raj Department',
+          items: [
+            'Rs. 10 crore sanctioned in 2024-25 under account head 5054 for rural road development.',
+            'Rs. 16.04 crore sanctioned under the Rural Roads Pragati Patha scheme.',
+            'Rs. 9.40 crore sanctioned in 2025-26 under account head 5054 for rural road development.',
+            'Rs. 15.75 crore sanctioned for rural roads under the 2025-26 CM’s Basic Infrastructure works.',
+            'Rs. 94.54 lakh sanctioned in 2026-27 under account head 3054 for CM’s rural roads maintenance.',
+          ],
+        },
+        {
+          title: 'Minority Welfare Department',
+          items: [
+            'Rs. 3.00 crore sanctioned for comprehensive development of minority colonies.',
+          ],
+        },
+        {
+          title: 'Fisheries, Ports and Inland Water Transport Department',
+          items: [
+            'Rs. 450 lakh released in 2023-24 for sea erosion protection walls at Padubidri, Hejamadi and Nadipatta.',
+            'Rs. 118.77 lakh released in 2024-25.',
+            'Rs. 100 lakh released in 2024-25 for fisheries link roads.',
+          ],
+        },
+        {
+          title: 'Social Welfare Department — SC Colony Road Development',
+          items: [
+            'Rs. 400.00 lakh released in 2024-25 for development of Scheduled Caste colonies.',
+            'Rs. 350.00 lakh released in 2025-26 for development of Scheduled Caste colonies.',
+          ],
+        },
+        {
+          title: 'Religious Endowment and Muzrai Department',
+          items: [
+            'Rs. 30.00 lakh released in 2024-25 for various places of worship in Kaup constituency.',
+            'Rs. 625.00 lakh released under the 2025-26 CM’s Basic Infrastructure Development Grant Scheme for places of worship and community hall works.',
+          ],
+        },
+        {
+          title: 'Minor Irrigation & Groundwater Development Department — River Bank Protection',
+          items: [
+            'Rs. 150.00 lakh sanctioned for Kattikere lake development at Mudubettu village, Katapadi GP.',
+            'Rs. 200 lakh sanctioned for desilting of the Kamini river between Thenka and Kamini, and river bank protection at selected stretches, Kaup taluk.',
+            'Rs. 90.00 lakh sanctioned for river bank protection works at Bairampalli, Manipura and Katapadi.',
+            'Rs. 73.00 lakh released for a check dam on the Bailu creek near Nalluru Bommu Pujari house, Badagubettu Gram Panchayat.',
+            'Rs. 200.00 lakh released for lake development near the Veeranjaneya shrine, Sri Vishweshwara Temple, Yellur.',
+            'Rs. 50.00 lakh released for a retaining wall at Sri Mahalingeshwara Mahaganapati Temple, Uchila.',
+            'Rs. 25.00 lakh released for a retaining wall along the creek near Sri Rama Mandira / MLA Junior College, Ward 6, Bada village.',
+            'Rs. 50.00 lakh sanctioned for a retaining wall at the rain-eroded stretch near Rama Bhajana Mandira, Koppala, Udyavara.',
+          ],
+        },
+        {
+          title: 'Health Department',
+          items: [
+            'Rs. 65.00 lakh sanctioned for a Health and Wellness Centre building at Angarakatte, Kudi village, Kodibettu GP.',
+            'Rs. 65.00 lakh sanctioned for a Health and Wellness Centre building at Belvadi.',
+            'Rs. 65.00 lakh sanctioned for a Health and Wellness Centre building in Yellur Gram Panchayat.',
+            'Rs. 8.00 lakh (MRPL) for a refrigerated mortuary at Padubidri Primary Health Centre.',
+            'Rs. 18.50 lakh for a refrigerated mortuary at Kaup Primary Health Centre.',
+            'Rs. 10.00 lakh for repair works at Shirva Community Health Centre building.',
+            'Rs. 20.00 lakh for upgradation works at Kaup Primary Health Centre.',
+            'Rs. 65.00 lakh sanctioned for a Health and Wellness Centre building at Kuthyaru.',
+            'Rs. 65.00 lakh sanctioned for a Health and Wellness Centre building at Bairampalli Shiroor 41.',
+            'Rs. 5.75 crore for upgrading Kaup Primary Health Centre to a Block Health Centre with a new building.',
+            'Rs. 65.00 lakh sanctioned for a Health and Wellness Centre building at Heroor.',
+          ],
+        },
+        {
+          title: 'Animal Husbandry & Other Departments',
+          items: [
+            'Rs. 50.00 lakh sanctioned for a cattle cremation ground (Go Rudra Bhoomi) building, Yellur GP.',
+            'Rs. 17.00 lakh sanctioned for a godown near the Goshala, Yellur GP.',
+            'Rs. 49.98 lakh released for construction of a veterinary dispensary at Kote Katapadi.',
+            'Rs. 60.00 lakh sanctioned to the ITDP Department for an MPC centre building under the PM-JANMAN scheme.',
+            'Rs. 2.33 crore released for a fire station building near Hejamadi under the K-SAFE-2 scheme.',
+            'Rs. 103.77 crore sanctioned for Kaup-Hejamadi port construction works, 2023-24 to 2025-26.',
+            'Rs. 35.00 lakh sanctioned under the 2025-26 Coastal Development Authority scheme.',
+            'Rs. 25.00 lakh sanctioned under the 2026-27 Coastal Development Authority scheme.',
+          ],
+        },
+      ],
+    },
+    news: {
+      kicker: 'News',
+      heading: 'Press Clippings & Interviews',
+      subtitle:
+        'A collection of recent newspaper coverage and interviews featuring MLA Gurme Suresh Shetty.',
+      clippingLabel: 'Press Clipping',
+      interviewLabel: 'Interview',
+      socialLabel: 'Instagram Post',
+      linkLabel: 'View Full Story',
+      prevLabel: 'Previous',
+      nextLabel: 'Next',
+      items: [
+        {
+          type: 'interview',
+          title:
+            "'30 Years of Hotel Work, a Life in Ballari' — BJP MLA Gets Emotional Over the Coastal People's Love!",
+          source: 'Vishwavani TV',
+          date: '',
+          link: 'https://www.youtube.com/watch?v=0TauEYTnsOs',
+          image: 'https://img.youtube.com/vi/0TauEYTnsOs/hqdefault.jpg',
+        },
+        {
+          type: 'interview',
+          title:
+            "'Less Talk, More Work' — MLA Gurme Takes a Dig at the 'Hand', Kaup People Hail BJP!",
+          source: 'Gurme Suresh Shetty',
+          date: '',
+          link: 'https://www.youtube.com/watch?v=dDKLPZ-IMIA',
+          image: 'https://img.youtube.com/vi/dDKLPZ-IMIA/hqdefault.jpg',
+        },
+        {
+          type: 'interview',
+          title:
+            "'Madam Chairperson, You Hold a Mother's Place — Listen to Everyone's Problems'",
+          source: 'Gurme Suresh Shetty',
+          date: '',
+          link: 'https://youtu.be/mkbXNYpvvoM',
+          image: 'https://img.youtube.com/vi/mkbXNYpvvoM/hqdefault.jpg',
+        },
+        {
+          type: 'interview',
+          title: "Honourable Chairperson..! You Must Stay Firm",
+          source: 'Udayavani',
+          date: '',
+          link: 'https://www.youtube.com/watch?v=xElp9HVfgXk',
+          image: 'https://img.youtube.com/vi/xElp9HVfgXk/hqdefault.jpg',
+        },
+      ],
     },
     footer: {
       tagline: 'Dedicated to serving Kaup.',
@@ -473,6 +685,14 @@ function App() {
   const [lang, setLang] = useState('kn')
   const t = content[lang]
 
+  const allWorkCards = t.funds.categories.map((category, idx) => ({
+    icon: 'grant',
+    category: t.works.grantsCategory,
+    title: category.title,
+    desc: t.works.grantsDesc,
+    fundsIndexes: [idx],
+  }))
+
   const [index, setIndex] = useState(0)
   const [aboutIndex, setAboutIndex] = useState(0)
   const [menuOpen, setMenuOpen] = useState(false)
@@ -487,6 +707,7 @@ function App() {
   const [detailsImage, setDetailsImage] = useState(null)
   const [detailsImagePreview, setDetailsImagePreview] = useState(null)
   const [chatSubmitting, setChatSubmitting] = useState(false)
+  const [activeWork, setActiveWork] = useState(null)
   const [chatForm, setChatForm] = useState({
     name: '',
     phone: '',
@@ -636,11 +857,12 @@ function App() {
   }
 
   useEffect(() => {
-    document.body.style.overflow = menuOpen || chatOpen ? 'hidden' : ''
+    document.body.style.overflow =
+      menuOpen || chatOpen || activeWork !== null ? 'hidden' : ''
     return () => {
       document.body.style.overflow = ''
     }
-  }, [menuOpen, chatOpen])
+  }, [menuOpen, chatOpen, activeWork])
 
   useEffect(() => {
     const id = setInterval(() => {
@@ -754,6 +976,24 @@ function App() {
     raf = requestAnimationFrame(tick)
     return () => cancelAnimationFrame(raf)
   }, [])
+
+  const newsTrackRef = useRef(null)
+
+  const scrollNews = (direction) => {
+    const track = newsTrackRef.current
+    if (!track) return
+    const card = track.querySelector('.news-card')
+    const amount = card ? card.getBoundingClientRect().width + 24 : track.clientWidth * 0.8
+    const maxScroll = track.scrollWidth - track.clientWidth
+
+    if (direction > 0 && track.scrollLeft >= maxScroll - 4) {
+      track.scrollTo({ left: 0, behavior: 'smooth' })
+    } else if (direction < 0 && track.scrollLeft <= 4) {
+      track.scrollTo({ left: maxScroll, behavior: 'smooth' })
+    } else {
+      track.scrollBy({ left: direction * amount, behavior: 'smooth' })
+    }
+  }
 
   return (
     <>
@@ -971,7 +1211,7 @@ function App() {
             </div>
 
             <div className="works-track" ref={worksTrackRef}>
-              {t.works.items.map((w) => (
+              {allWorkCards.map((w, i) => (
                 <div className="work-card" key={w.title}>
                   <div className="work-image">
                     <div className="work-image-placeholder">
@@ -989,7 +1229,11 @@ function App() {
                   </div>
                   <div className="work-card-body">
                     <h3>{w.title}</h3>
-                    <button type="button" className="work-read-more">
+                    <button
+                      type="button"
+                      className="work-read-more"
+                      onClick={() => setActiveWork(i)}
+                    >
                       {t.works.readMore}
                       <span aria-hidden="true">&rarr;</span>
                     </button>
@@ -1040,27 +1284,101 @@ function App() {
         </div>
       </section>
 
-      <section id="report-card" className="report-section">
-        <p className="report-kicker">{t.report.kicker}</p>
-        <h2 className="report-heading">{t.report.heading}</h2>
-        <p className="report-subtitle">{t.report.subtitle}</p>
 
-        <div className="report-buttons">
-          {reportYears.map((year) => (
-            <a href="#" className="report-btn" key={year}>
+      <section id="news" className="news-section">
+        <div className="news-heading">
+          <p className="news-kicker">{t.news.kicker}</p>
+          <h2>{t.news.heading}</h2>
+          <p className="news-subtitle">{t.news.subtitle}</p>
+        </div>
+
+        <div className="news-slider">
+          <div className="news-track" ref={newsTrackRef}>
+            {t.news.items.map((n, i) => (
+              <a
+                className="news-card"
+                href={n.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                key={`${n.title}-${i}`}
+              >
+                <div className="news-card-media">
+                  {n.image ? (
+                    <img src={n.image} alt={n.title} />
+                  ) : (
+                    <div className="news-card-placeholder">
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.3"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        {newsIcons[n.type]}
+                      </svg>
+                    </div>
+                  )}
+                  <span className="news-card-badge">
+                    {
+                      {
+                        clipping: t.news.clippingLabel,
+                        interview: t.news.interviewLabel,
+                        social: t.news.socialLabel,
+                      }[n.type]
+                    }
+                  </span>
+                </div>
+                <div className="news-card-body">
+                  <p className="news-card-meta">
+                    {n.date ? `${n.source} · ${n.date}` : n.source}
+                  </p>
+                  <h3>{n.title}</h3>
+                  <span className="news-card-link">
+                    {t.news.linkLabel}
+                    <span aria-hidden="true">&rarr;</span>
+                  </span>
+                </div>
+              </a>
+            ))}
+          </div>
+
+          <div className="news-slider-controls">
+            <button
+              type="button"
+              className="news-slider-arrow news-slider-arrow-prev"
+              aria-label={t.news.prevLabel}
+              onClick={() => scrollNews(-1)}
+            >
               <svg
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                strokeWidth="1.8"
+                strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
               >
-                <path d="M12 4v11m0 0 4-4m-4 4-4-4M5 19h14" />
+                <path d="m15 6-6 6 6 6" />
               </svg>
-              {year} {t.report.suffix}
-            </a>
-          ))}
+            </button>
+            <button
+              type="button"
+              className="news-slider-arrow news-slider-arrow-next"
+              aria-label={t.news.nextLabel}
+              onClick={() => scrollNews(1)}
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="m9 6 6 6-6 6" />
+              </svg>
+            </button>
+          </div>
         </div>
       </section>
 
@@ -1206,6 +1524,67 @@ function App() {
           <p className="footer-credit">{t.footer.credit}</p>
         </div>
       </footer>
+
+      {activeWork !== null && allWorkCards[activeWork] && (
+        <div className="work-modal-overlay" onClick={() => setActiveWork(null)}>
+          <div
+            className="work-modal"
+            role="dialog"
+            aria-modal="true"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              type="button"
+              className="work-modal-close"
+              aria-label={t.meta.closeLabel}
+              onClick={() => setActiveWork(null)}
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M6 6l12 12M18 6 6 18" />
+              </svg>
+            </button>
+
+            <p className="work-modal-category">
+              {allWorkCards[activeWork].category}
+            </p>
+            <h3 className="work-modal-title">{allWorkCards[activeWork].title}</h3>
+            <p className="work-modal-desc">{allWorkCards[activeWork].desc}</p>
+
+            {allWorkCards[activeWork].fundsIndexes?.length > 0 && (
+              <div className="work-modal-funds">
+                {allWorkCards[activeWork].fundsIndexes.some(
+                  (idx) =>
+                    t.funds.categories[idx]?.title !== allWorkCards[activeWork].title,
+                ) && <h4>{t.works.relatedFunds}</h4>}
+                {allWorkCards[activeWork].fundsIndexes.map((idx) => {
+                  const category = t.funds.categories[idx]
+                  if (!category) return null
+                  const isCardTitle = category.title === allWorkCards[activeWork].title
+                  return (
+                    <div className="work-modal-fund-group" key={category.title}>
+                      {!isCardTitle && (
+                        <p className="work-modal-fund-title">{category.title}</p>
+                      )}
+                      <ul>
+                        {category.items.map((item) => (
+                          <li key={item}>{item}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )
+                })}
+              </div>
+            )}
+          </div>
+        </div>
+      )}
 
       <div className={`chat-widget${chatOpen ? ' open' : ''}`}>
         {chatOpen && (
