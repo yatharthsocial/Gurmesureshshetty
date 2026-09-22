@@ -159,6 +159,14 @@ const chatStepsBase = [
   { key: 'details', type: 'details' },
 ]
 
+// Falls back to production so the site still works if VITE_API_BASE_URL is
+// unset, but that should never happen in a real deploy — warn loudly so a
+// missing env var is caught immediately instead of silently hitting prod.
+if (import.meta.env.DEV && !import.meta.env.VITE_API_BASE_URL) {
+  console.warn(
+    'VITE_API_BASE_URL is not set — falling back to the production API. Set it in frontend/.env.',
+  )
+}
 const API_URL =
   import.meta.env.VITE_API_BASE_URL ||
   'https://gurmesureshshetty-backend-production.up.railway.app'
