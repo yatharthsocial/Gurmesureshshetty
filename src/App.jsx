@@ -20,6 +20,11 @@ import gallery10 from './assets/gallery/IMG-20230304-WA0010.jpg'
 import gallery11 from './assets/gallery/IMG-20230517-WA0053.jpg'
 import gallery12 from './assets/gallery/IMG-20230529-WA0076.jpg'
 import gallery13 from './assets/gallery/IMG-20230715-WA0026.jpg'
+import pwdImg from './assets/Public Works Department.jpg'
+import mlaFundImg from './assets/MLA Local Area Development Fund, 2023-24 to 2026-27.jpg'
+import fisheriesImg from './assets/Fisheries, Ports and Inland Water Transport Department.jpg'
+import rdprImg from './assets/Rural Development & Panchayat Raj Department.jpg'
+import minorityWelfareImg from './assets/Minority Welfare Department.jpg'
 import './App.css'
 
 const aboutImages = [aboutImg, aboutImg2, aboutImg3]
@@ -67,6 +72,20 @@ const galleryImages = [
   { src: gallery11 },
   { src: gallery12 },
   { src: gallery13 },
+]
+
+// Index-aligned with content.<lang>.funds.categories (same order in kn and en)
+const fundsCardImages = [
+  pwdImg, // 0: Public Works Department
+  mlaFundImg, // 1: MLA Local Area Development Fund
+  rdprImg, // 2: Rural Development & Panchayat Raj Department
+  minorityWelfareImg, // 3: Minority Welfare Department
+  fisheriesImg, // 4: Fisheries, Ports and Inland Water Transport Department
+  null, // 5: Social Welfare Department
+  null, // 6: Religious Endowment and Muzrai Department
+  null, // 7: Minor Irrigation & Groundwater Development Department
+  null, // 8: Health Department
+  null, // 9: Animal Husbandry & Other Departments
 ]
 
 // Canonical (Kannada) values — always what gets stored/sent, regardless of display language
@@ -687,6 +706,7 @@ function App() {
 
   const allWorkCards = t.funds.categories.map((category, idx) => ({
     icon: 'grant',
+    image: fundsCardImages[idx] || null,
     category: t.works.grantsCategory,
     title: category.title,
     desc: t.works.grantsDesc,
@@ -1124,7 +1144,7 @@ function App() {
                   </svg>
                 </a>
                 <a
-                  href="https://x.com/GurmeShetty?lang=en"
+                  href="https://x.com/GurmeSuresh"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="X"
@@ -1214,18 +1234,22 @@ function App() {
               {allWorkCards.map((w, i) => (
                 <div className="work-card" key={w.title}>
                   <div className="work-image">
-                    <div className="work-image-placeholder">
-                      <svg
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="1.1"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        {workIcons[w.icon]}
-                      </svg>
-                    </div>
+                    {w.image ? (
+                      <img src={w.image} alt={w.title} />
+                    ) : (
+                      <div className="work-image-placeholder">
+                        <svg
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="1.1"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          {workIcons[w.icon]}
+                        </svg>
+                      </div>
+                    )}
                   </div>
                   <div className="work-card-body">
                     <h3>{w.title}</h3>
@@ -1434,7 +1458,7 @@ function App() {
                 </svg>
               </a>
               <a
-                href="https://x.com/GurmeShetty?lang=en"
+                href="https://x.com/GurmeSuresh"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="X"
