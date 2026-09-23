@@ -25,6 +25,9 @@ import mlaFundImg from './assets/MLA Local Area Development Fund, 2023-24 to 202
 import fisheriesImg from './assets/Fisheries, Ports and Inland Water Transport Department.jpg'
 import rdprImg from './assets/Rural Development & Panchayat Raj Department.jpg'
 import minorityWelfareImg from './assets/Minority Welfare Department.jpg'
+import healthImg from './assets/Health Department.jpg'
+import minorIrrigationImg from './assets/Minor Irrigation & Groundwater Development.jpg'
+import animalHusbandryImg from './assets/Animal Husbandry & Other Departments.jpg'
 import './App.css'
 
 const aboutImages = [aboutImg, aboutImg2, aboutImg3]
@@ -83,9 +86,9 @@ const fundsCardImages = [
   fisheriesImg, // 4: Fisheries, Ports and Inland Water Transport Department
   null, // 5: Social Welfare Department
   null, // 6: Religious Endowment and Muzrai Department
-  null, // 7: Minor Irrigation & Groundwater Development Department
-  null, // 8: Health Department
-  null, // 9: Animal Husbandry & Other Departments
+  minorIrrigationImg, // 7: Minor Irrigation & Groundwater Development Department
+  healthImg, // 8: Health Department
+  animalHusbandryImg, // 9: Animal Husbandry & Other Departments
 ]
 
 // Canonical (Kannada) values — always what gets stored/sent, regardless of display language
@@ -712,14 +715,21 @@ function App() {
   const [lang, setLang] = useState('kn')
   const t = content[lang]
 
-  const allWorkCards = t.funds.categories.map((category, idx) => ({
-    icon: 'grant',
-    image: fundsCardImages[idx] || null,
-    category: t.works.grantsCategory,
-    title: category.title,
-    desc: t.works.grantsDesc,
-    fundsIndexes: [idx],
-  }))
+  // Indexes 5 and 6 (Social Welfare — SC Colony Road Development, Religious
+  // Endowment and Muzrai Department) are hidden as achievement cards for now
+  // — no photo available yet. The underlying grant data stays in
+  // t.funds.categories in case they're needed again later.
+  const HIDDEN_FUNDS_CARD_INDEXES = [5, 6]
+  const allWorkCards = t.funds.categories
+    .map((category, idx) => ({
+      icon: 'grant',
+      image: fundsCardImages[idx] || null,
+      category: t.works.grantsCategory,
+      title: category.title,
+      desc: t.works.grantsDesc,
+      fundsIndexes: [idx],
+    }))
+    .filter((_, idx) => !HIDDEN_FUNDS_CARD_INDEXES.includes(idx))
 
   const [index, setIndex] = useState(0)
   const [aboutIndex, setAboutIndex] = useState(0)
